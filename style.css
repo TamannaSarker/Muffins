@@ -42,6 +42,13 @@ nav ul li a{
     color: white;
     
 }
+nav ul li span{
+color:white;
+
+}
+
+
+
 a.active, a:hover{
     background:navajowhite;
     padding: 5px;
@@ -56,7 +63,7 @@ body{
 }
 p{
     font-weight: 300;
-    color:;
+    
 }
 
 
