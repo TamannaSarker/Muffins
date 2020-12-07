@@ -163,6 +163,7 @@ p{
     width: 330px;
     margin: 30px;
     box-sizing: border-box;
+
     border-radius: 5px; 
     text-align: center; 
     background: #f9f9f9;
@@ -190,6 +191,7 @@ p{
 }
      
 .card-containers{
+    padding-top: 80px;
     box-sizing: border-box;
     display: flex;
     flex-wrap: wrap;
@@ -290,41 +292,5 @@ p{
     }
     
 /*cart page*/
-.img2{
-    height: 100px;
-}
-.bc{
-    background-color: thistle;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    justify-content: space-around;
-    border-radius: 10px;
-    padding:15px;
-    margin-top: 100px;
-    font-size: 25px;
-}
-@media (max-width:652px){
-    .bc{
-        font-size: 13px;
-        justify-content: space-around;
-    }
-}
-.remove-item{
-    height: 30px;
-}
-.bc1{
-    background-color: hotpink;
-    padding: 20px;
-
-}
-.input{
-    width: 60px;
-}
-/**/
-.checkout{
-    text-align: end;
-    padding: 10px;
-}
 
 /* Test*/
