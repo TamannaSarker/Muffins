@@ -6,20 +6,34 @@
     list-style: none;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+p {
+    font-weight: 300;
+    color: #333;
+    line-height: 24px;
+}
+h2 {
+    padding-bottom: 15px;
+}
+
 /*navbar*/
 nav{
     position: fixed;
-    background-color: hotpink;
+    background-color: #ffffff;
     height: 80px;
     width: 100%;
 }
 label.logo{
-    color: white;
+    color: #fcd7a7;
     font-size: 25px;
-    line-height: 80px;
-    padding: 0 100px;
+    line-height: 80px; 
     font-weight: bold;
 
+}
+img.logo-style {
+    height: 50px;
+    width: auto;
+    margin: 15px 20px;
+    float: left;
 }
 nav ul{
     float: right;
@@ -31,10 +45,9 @@ nav ul li{
     margin: 0 5px;
 }
 nav ul li a{
-    color: white;
-    font-size: 17px;
-    padding: 7px 13px;
-    border-radius: 5px;
+    color: #222222;
+    font-size: 14px;
+    padding: 7px 13px; 
     text-transform: uppercase;
 }
 a:active, a:hover{
@@ -45,7 +58,7 @@ a:active, a:hover{
 }
 .checkbtn{
     font-size: 30px;
-    color: white;
+    color: #333333;
     float: right;
     line-height: 80px;
     margin-right: 40px;
@@ -57,12 +70,14 @@ a:active, a:hover{
 }
 @media (max-width: 952px){
     label.logo{
-        font-size: 25px;
-        padding-left: 50px;
+        font-size: 25px; 
 
     }
+    .banner .content h2 {
+        font-size: 5em; 
+    }
     nav ul li a{
-        font-size: 16px;
+        font-size: 14px;
     }
 }
 @media (max-width:952px){
@@ -85,7 +100,7 @@ a:active, a:hover{
         width: 100%;
     }
     nav ul li a{
-        font-size: 20px;
+        font-size: 14px;
     }
     a:hover, a:active{
         background-color: none;
@@ -106,7 +121,7 @@ p{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url(images/carrot-muffins.jpg);
+    background-image: url(images/cakes-blurred.jpg);
     background-size: cover;
 }
 .banner .content{
@@ -114,8 +129,14 @@ p{
     text-align: center;
 }
 .banner .content h2{
-    font-size: 3em;
-    color:white;
+    font-size: 6em;
+    color:#ff69b4;
+    text-transform: uppercase;
+    text-shadow: 5px 5px 15px #fdfdfd;
+}
+.cake-style-color { 
+    color:#fcd7a7; 
+    text-shadow: 5px 5px 15px #fdfdfd;
 }
 .banner .content p{
     font-size: 1em;
@@ -142,11 +163,10 @@ p{
     width: 330px;
     margin: 30px;
     box-sizing: border-box;
-    border-radius: 9px;
-    box-shadow: 1px 2px 4px gray;
-    text-align: center;
-    height: 435px;
-        
+    border-radius: 5px; 
+    text-align: center; 
+    background: #f9f9f9;
+    padding-bottom:15px;    
 }
 .img-style{
     width: 100%;
@@ -154,26 +174,21 @@ p{
     border-radius: 3px;
     }
 .card-body .card-title{
-    padding: 5px;
+    padding: 20px 5px 15px;
     text-align: center;
-    font-size: 1rem;
+    font-size: 22px;
+    text-transform: uppercase;
+    color: #444; 
     
 }
 .card-body .card-desc{
-    color: white;
-    background-color:rgb(243, 115, 215);
-    padding: 15px;
-    margin: 10px;
-    border-radius: 3px;
+    color: #333333; 
 }
 .card-desc h5{
     margin: 10px;
     font-size: 2em;
 }
-    
-.card:hover{
-    box-shadow: 6px 12px 10px gray;
-}
+     
 .card-containers{
     box-sizing: border-box;
     display: flex;
@@ -183,11 +198,14 @@ p{
         
 
 }
+.product-price-style {
+    font-weight: bold;
+}
 .link-button{
     margin: 10px;
     border: none;
-    border-radius: 5px;
-    padding: 5px;
+    border-radius: 20px;
+    padding: 10px 20px;
 }
 .link-button:hover{
     
@@ -213,7 +231,7 @@ p{
 .img1-style{
     height: 300px;
     padding: 30px;
-    border-radius: 50%;
+    border-radius: 5px;
     margin-left: 30px;
 }
 .half-width{
@@ -221,12 +239,12 @@ p{
     margin-left: 30px;
 }
 /* Sign in*/
-.sign-in-part{
-    margin-top: 70px;
+.sign-in-part{ 
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: plum;
+    background-color: #ff69b4;
+    color: white;
     padding: 50px;
 }
 
@@ -239,15 +257,15 @@ p{
         border: none;
         padding: 5px;
         border-radius: 3px;
-        box-shadow: 1px 2px 4px;
+        border-radius: 30px;
         margin-bottom: 7px;
     }
-    .sign-in button{
-        box-shadow: 1px 2px 4px;
+    .sign-in button{ 
         background-color: white;
         padding: 5px;
-        border-radius: 3px;
-    border: none;}
+        border-radius: 30px;
+        border: none;
+    }
     
 
     
