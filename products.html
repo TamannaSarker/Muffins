@@ -24,13 +24,35 @@
             <li><a href="products.html">Products</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#contact">Contact</a></li>
-            <li class="cart"><a href="#CART">
-                    <ion-icon name="cart-outline"></ion-icon>Cart <span>0</span>
-                </a></li>
+            <li><a id="cart-info" href="#cart">
+                    <span class="item-total">0</span>
+                    <ion-icon name="cart-outline"></ion-icon>Cart
+                    <span class="cart-total"></span>
+                </a>
+            </li>
         </ul>
     </nav>
 
     <!-- Hamburger menu end -->
+    <!--cart div -->
+    <div id="cart" class="cart">
+        <!-- cart item will be dynamically inserted here-->
+
+        <div class="cart-total-container">
+            <h5>total: </h5>
+            <h5> $ <strong id="cart-total" class="font-weight-bold">0</strong> </h5>
+        </div>
+        <!--end cart total -->
+        <!-- cart buttons -->
+        <div class="cart-buttons-container ">
+            <a href="#" id="clear-cart" class="btn btn-outline-secondary text-uppercase btn-pink">clear cart</a>
+            <a href="#" id="checkout" class="btn btn-outline-secondary text-uppercase btn-pink">checkout</a>
+        </div>
+    </div>
+
+    <!-->End of cart div-->
+
+
     <!--Card Section-->
     <section>
         <div class="card-containers">
@@ -50,8 +72,8 @@
                         <button id="minus-btn" class="quantity"><i class="fas fa-minus"></i></button>
                         <input type="text" class="input" id="quantity" value="0">
                         <button id="plus-btn" class=""><i class="fas fa-plus"></i></button>
-            
-                     </div>
+
+                    </div>
 
                 </div>
             </div>
@@ -71,8 +93,8 @@
                         <button id="minus-btn" class="quantity"><i class="fas fa-minus"></i></button>
                         <input type="text" class="input" id="quantity" value="0">
                         <button id="plus-btn" class=""><i class="fas fa-plus"></i></button>
-            
-                     </div>
+
+                    </div>
 
                 </div>
             </div>
@@ -92,8 +114,8 @@
                         <button id="minus-btn" class="quantity"><i class="fas fa-minus"></i></button>
                         <input type="text" class="input" id="quantity" value="0">
                         <button id="plus-btn" class=""><i class="fas fa-plus"></i></button>
-            
-                     </div>
+
+                    </div>
 
                 </div>
             </div>
@@ -119,8 +141,8 @@
                         <button id="minus-btn" class="quantity"><i class="fas fa-minus"></i></button>
                         <input type="text" class="input" id="quantity" value="0">
                         <button id="plus-btn" class=""><i class="fas fa-plus"></i></button>
-            
-                     </div>
+
+                    </div>
 
                 </div>
             </div>
@@ -140,8 +162,8 @@
                         <button id="minus-btn" class="quantity"><i class="fas fa-minus"></i></button>
                         <input type="text" class="input" id="quantity" value="0">
                         <button id="plus-btn" class=""><i class="fas fa-plus"></i></button>
-            
-                     </div>
+
+                    </div>
 
                 </div>
             </div>
@@ -161,8 +183,8 @@
                         <button id="minus-btn" class="quantity"><i class="fas fa-minus"></i></button>
                         <input type="text" class="input" id="quantity" value="0">
                         <button id="plus-btn" class=""><i class="fas fa-plus"></i></button>
-            
-                     </div>
+
+                    </div>
 
                 </div>
             </div>
@@ -188,8 +210,8 @@
                         <button id="minus-btn" class="quantity"><i class="fas fa-minus"></i></button>
                         <input type="text" class="input" id="quantity" value="0">
                         <button id="plus-btn" class=""><i class="fas fa-plus"></i></button>
-            
-                     </div>
+
+                    </div>
 
                 </div>
             </div>
@@ -209,8 +231,8 @@
                         <button id="minus-btn" class="quantity"><i class="fas fa-minus"></i></button>
                         <input type="text" class="input" id="quantity" value="0">
                         <button id="plus-btn" class=""><i class="fas fa-plus"></i></button>
-            
-                     </div>
+
+                    </div>
 
                 </div>
             </div>
@@ -230,8 +252,8 @@
                         <button id="minus-btn" class="quantity"><i class="fas fa-minus"></i></button>
                         <input type="text" class="input" id="quantity" value="0">
                         <button id="plus-btn" class=""><i class="fas fa-plus"></i></button>
-            
-                     </div>
+
+                    </div>
 
                 </div>
             </div>
