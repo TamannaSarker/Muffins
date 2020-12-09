@@ -29,7 +29,21 @@ function addCartCounter() {
 updateCartOnReload();
 
 
+      //------------ LOGIN SECTION -------------------------
 
+
+      function validate(){
+         var username = document.getElementById("username").value;
+         var password = document.getElementById("password").value;
+
+         if(username =="admin" && password == "123"){
+            alert("Login succesful");
+            return false;
+
+         }
+         else{
+            alert("Login failed");
+         }
 document.querySelector("#minus-btn").setAttribute("disabled", "disabled");
 
 var valueCount
@@ -63,4 +77,6 @@ document.querySelector("#minus-btn").addEventListener("click", function () {
 
 });
 
+      }
 
+      //------------ LOGIN SECTION END -------------------------
