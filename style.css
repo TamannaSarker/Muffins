@@ -403,6 +403,13 @@ align-items: center;
     
 /*cart page*/
 /* Contact site*/
+.bg{
+    background-color: #ff69b4;
+   
+}
+.bg1{
+    padding-top: 15px;
+}
 .contact{
     background-image: url(images/biography-bg.png);
     padding: 100px;
