@@ -17,7 +17,8 @@
         <label for="check" class="checkbtn">
             &#9776;
         </label>
-        <label class="logo">CupCakes</label>
+        <img class="logo-style" src="images/cake.png" alt="">
+        <label class="logo">Piece of cake</label>
         <ul>
             <li><a href="index.html" class="active">Home</a></li>
             <li><a href="products.html">Products</a></li>
@@ -30,18 +31,37 @@
     </nav>
 
     <!-- Hamburger menu end -->
+    <!--cart div -->
+    <div id="cart" class="cart">
+        <!-- cart item will be dynamically inserted here-->
+
+        <div class="cart-total-container">
+            <h5>total: </h5>
+            <h5> $ <strong id="cart-total" class="font-weight-bold">0</strong> </h5>
+        </div>
+        <!--end cart total -->
+        <!-- cart buttons -->
+        <div class="cart-buttons-container ">
+            <a href="#" id="clear-cart" class="btn btn-outline-secondary text-uppercase btn-pink">clear cart</a>
+            <a href="#" id="checkout" class="btn btn-outline-secondary text-uppercase btn-pink">checkout</a>
+        </div>
+    </div>
+
+    <!-->End of cart div-->
+
+
     <!--Card Section-->
     <section>
         <div class="card-containers">
             <div class="card">
-                <img class="img-style" src="images/jul-muffin.jpg" alt="">
+                <img class="img-style" src="images/jul-muffin.jpg" alt="Julmuffin">
 
                 <div class="card-body">
                     <div class="card-title">
-                        <h4>Jul Muffin</h4>
+                        <div class="product-name-style">Christmas cupcakes</div>
                     </div>
                     <div class="card-desc">
-                        <h5>$2</h5>
+                        <div class="product-price-style">$2</div>
                         <button class="link-button">Add To Cart</button>
                     </div>
                     <div>
@@ -49,8 +69,8 @@
                         <button id="minus-btn" class="quantity"><i class="fas fa-minus"></i></button>
                         <input type="text" class="input" id="quantity" value="0">
                         <button id="plus-btn" class=""><i class="fas fa-plus"></i></button>
-            
-                     </div>
+
+                    </div>
 
                 </div>
             </div>
@@ -59,10 +79,10 @@
 
                 <div class="card-body">
                     <div class="card-title">
-                        <h4>Blåbärsmuffin</h4>
+                        <div class="product-name-style">Blueberry cupcakes</div>
                     </div>
                     <div class="card-desc">
-                        <h5>$3</h5>
+                        <div class="product-price-style">$3</div>
                         <button class="link-button">Add To Cart</button>
                     </div>
                     <div>
@@ -70,8 +90,8 @@
                         <button id="minus-btn" class="quantity"><i class="fas fa-minus"></i></button>
                         <input type="text" class="input" id="quantity" value="0">
                         <button id="plus-btn" class=""><i class="fas fa-plus"></i></button>
-            
-                     </div>
+
+                    </div>
 
                 </div>
             </div>
@@ -80,10 +100,10 @@
 
                 <div class="card-body">
                     <div class="card-title">
-                        <h4>kanel Muffin</h4>
+                        <div class="product-name-style">Cinnamon cupcakes</div>
                     </div>
                     <div class="card-desc">
-                        <h5>$3</h5>
+                        <div class="product-price-style">$3</div>
                         <button class="link-button">Add To Cart</button>
                     </div>
                     <div>
@@ -91,8 +111,8 @@
                         <button id="minus-btn" class="quantity"><i class="fas fa-minus"></i></button>
                         <input type="text" class="input" id="quantity" value="0">
                         <button id="plus-btn" class=""><i class="fas fa-plus"></i></button>
-            
-                     </div>
+
+                    </div>
 
                 </div>
             </div>
@@ -107,10 +127,10 @@
 
                 <div class="card-body">
                     <div class="card-title">
-                        <h4>kardemumma Muffin</h4>
+                        <div class="product-name-style">Cardamom cupcakes</div>
                     </div>
                     <div class="card-desc">
-                        <h5>$1</h5>
+                        <div class="product-price-style">$1</div>
                         <button class="link-button">Add To Cart</button>
                     </div>
                     <div>
@@ -118,8 +138,8 @@
                         <button id="minus-btn" class="quantity"><i class="fas fa-minus"></i></button>
                         <input type="text" class="input" id="quantity" value="0">
                         <button id="plus-btn" class=""><i class="fas fa-plus"></i></button>
-            
-                     </div>
+
+                    </div>
 
                 </div>
             </div>
@@ -128,10 +148,10 @@
 
                 <div class="card-body">
                     <div class="card-title">
-                        <h4>Chocolate Muffin</h4>
+                        <div class="product-name-style">Chocolate cupcakes</div>
                     </div>
                     <div class="card-desc">
-                        <h5>$2</h5>
+                        <div class="product-price-style">$2</div>
                         <button class="link-button">Add To Cart</button>
                     </div>
                     <div>
@@ -139,8 +159,8 @@
                         <button id="minus-btn" class="quantity"><i class="fas fa-minus"></i></button>
                         <input type="text" class="input" id="quantity" value="0">
                         <button id="plus-btn" class=""><i class="fas fa-plus"></i></button>
-            
-                     </div>
+
+                    </div>
 
                 </div>
             </div>
@@ -149,10 +169,10 @@
 
                 <div class="card-body">
                     <div class="card-title">
-                        <h4>Pepparkaksmuffin</h4>
+                        <div class="product-name-style">Gingerbread cupcakes</div>
                     </div>
                     <div class="card-desc">
-                        <h5>$3</h5>
+                        <div class="product-price-style">$3</div>
                         <button class="link-button">Add To Cart</button>
                     </div>
                     <div>
@@ -160,8 +180,8 @@
                         <button id="minus-btn" class="quantity"><i class="fas fa-minus"></i></button>
                         <input type="text" class="input" id="quantity" value="0">
                         <button id="plus-btn" class=""><i class="fas fa-plus"></i></button>
-            
-                     </div>
+
+                    </div>
 
                 </div>
             </div>
@@ -176,10 +196,10 @@
 
                 <div class="card-body">
                     <div class="card-title">
-                        <h4>Carrot Muffin</h4>
+                        <div class="product-name-style">Carrot cupcakes</div>
                     </div>
                     <div class="card-desc">
-                        <h5>$3</h5>
+                        <div class="product-price-style">$3</div>
                         <button class="link-button">Add To Cart</button>
                     </div>
                     <div>
@@ -187,8 +207,8 @@
                         <button id="minus-btn" class="quantity"><i class="fas fa-minus"></i></button>
                         <input type="text" class="input" id="quantity" value="0">
                         <button id="plus-btn" class=""><i class="fas fa-plus"></i></button>
-            
-                     </div>
+
+                    </div>
 
                 </div>
             </div>
@@ -197,10 +217,10 @@
 
                 <div class="card-body">
                     <div class="card-title">
-                        <h4>Pepparkaks</h4>
+                        <div class="product-name-style">Festive cupcakes</div>
                     </div>
                     <div class="card-desc">
-                        <h5>$2</h5>
+                        <div class="product-price-style">$2</div>
                         <button class="link-button">Add To Cart</button>
                     </div>
                     <div>
@@ -208,8 +228,8 @@
                         <button id="minus-btn" class="quantity"><i class="fas fa-minus"></i></button>
                         <input type="text" class="input" id="quantity" value="0">
                         <button id="plus-btn" class=""><i class="fas fa-plus"></i></button>
-            
-                     </div>
+
+                    </div>
 
                 </div>
             </div>
@@ -218,10 +238,10 @@
 
                 <div class="card-body">
                     <div class="card-title">
-                        <h4>Jul Muffin</h4>
+                        <div class="product-name-style">Vanilla cupcakes</div>
                     </div>
                     <div class="card-desc">
-                        <h5>$2</h5>
+                        <div class="product-price-style">$2</div>
                         <button class="link-button">Add To Cart</button>
                     </div>
                     <div>
@@ -229,8 +249,8 @@
                         <button id="minus-btn" class="quantity"><i class="fas fa-minus"></i></button>
                         <input type="text" class="input" id="quantity" value="0">
                         <button id="plus-btn" class=""><i class="fas fa-plus"></i></button>
-            
-                     </div>
+
+                    </div>
 
                 </div>
             </div>
