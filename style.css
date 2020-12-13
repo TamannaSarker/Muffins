@@ -478,3 +478,16 @@ align-items: center;
 
 
 /* Test*/
+/*pagination*/
+center{
+    height: 100px;
+    
+}
+ .button{
+    padding: 5px;
+    margin-top: 25px;
+    cursor: pointer;
+    background-color: hotpink;
+    border: none;
+}
+
