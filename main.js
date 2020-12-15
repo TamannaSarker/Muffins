@@ -231,6 +231,4 @@ function showTotal() {
 
 
    })();
-
-
 };
