@@ -1,35 +1,31 @@
 
-/*
-let buyBtn = document.querySelectorAll(".link-button");
-console.log(buyBtn);
-
-for (var i = 0; i < buyBtn.length; i++) {
-   buyBtn[i].addEventListener("click", addCartCounter)
-}
-
-function updateCartOnReload() {
-   let productCount = localStorage.getItem("cartNumber");
-   document.querySelector(".cart span").textContent = productCount;
-
-}
+//------------ LOGIN SECTION -------------------------
 
 
-function addCartCounter() {
-   let productCount = localStorage.getItem("cartNumber");
-   productCount = parseInt(productCount);
-   if (productCount) {
-      localStorage.setItem('cartNumber', productCount + 1);
-      document.querySelector(".cart span").textContent = productCount + 1;
-   } else {
-      localStorage.setItem('cartNumber', 1);
-      document.querySelector(".cart span").textContent = 1;
+function validate() {
+   var username = document.getElementById("username").value;
+   var password = document.getElementById("password").value;
+
+   if (username == "admin" && password == "123") {
+      alert("Login succesful");
+      return false;
+
    }
+   else {
+      alert("Login failed");
+   }
+   document.querySelector("#minus-btn").setAttribute("disabled", "disabled");
 
-}
+   var valueCount
+   //plus
+   document.querySelector("#plus-btn").addEventListener("click", function () {
+      valueCount = document.getElementById("quantity").value;
 
-updateCartOnReload();
+      valueCount++;
 
-*/
+      var valueCount
+      //plus
+
 //------------ LOGIN SECTION -------------------------
 
 
@@ -113,38 +109,128 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //------------ ADMIN SECTION END -------------------------
 
-/*
+
 
 document.querySelector("#minus-btn").setAttribute("disabled", "disabled");
 
-var valueCount
-//plus
-document.querySelector("#plus-btn").addEventListener("click", function () {
-   valueCount = document.getElementById("quantity").value;
+      });
+   };
 
-   valueCount++;
+   let currentDataIn = JSON.parse(localStorage.getItem("productInCart"));
+   console.log(currentDataIn);
+
+   const headerQuantityIcon = document.querySelector(".item-total");
+   let quantity = 0;
+
+   currentDataIn.map(data => {
+      quantity = quantity + data.quantity;
+
+   });
+   headerQuantityIcon.textContent = quantity;
+
+   const cartItem = document.createElement("div");
+   cartItem.classList.add("cart-item");
+   if (JSON.parse(localStorage.getItem("productInCart")) == null) {
+      cartItem.innerHTML = `<p>"No items in cart"</p>`;
+
+   } else {
+      var dataInLocalStorage = JSON.parse(localStorage.getItem("productInCart"));
+
+      dataInLocalStorage.map(data => {
+         cartItem.innerHTML += `
+         <span id="dataId" style="display:none;"> id:${data.id}</span>
+         <img src="${data.img}" class="img-fluid rounded-circle" id="item-img" alt="">
+             <div class="item-text">
+                 <p id="cart-item-title" class="font-weight-bold mb-0">${data.name}</p>
+                 <span id="cart-item-price" class="cart-item-price" class="mb-0">
+                 <span>$</span>
+                 ${data.price}</span>
+                 <p id="cart-item-title" class="font-weight-bold mb-0">quantity:${data.quantity}</p>
+                 <div>
+                 <label for="quantity">Quantity:</label>
+                 <input type="number" id="quantity" name="quantity" min="1" max="5">
+                 </div>
+                
+             </div>
+            
+             <a href="#" onclick=Delete(this)><i class="fas fa-trash"></i></a>
+            
+          `;
+
+      });
 
 
-   document.getElementById("quantity").value = valueCount
-   if (valueCount > 1) {
-      document.querySelector("#minus-btn").removeAttribute("disabled")
-      document.querySelector("#minus-btn").classList.remove("disabled")
-   }
 
-})
-//minus
-document.querySelector("#minus-btn").addEventListener("click", function () {
-   valueCount = document.getElementById("quantity").value;
-
-   valueCount--;
+      const cartDiv = document.querySelector(".cart");
+      const totalDiv = document.querySelector(".cart-total-container");
+      cartDiv.insertBefore(cartItem, totalDiv);
 
 
-   document.getElementById("quantity").value = valueCount
-   if (valueCount == 1) {
-      document.querySelector("#minus-btn").setAttribute("disabled", "disabled")
-   }
-
-});
-*/
+   };
 
 
+   showTotal();
+
+
+};
+
+function showTotal() {
+
+   const total = [];
+   const showTotal = JSON.parse(localStorage.getItem("productInCart"));
+   showTotal.map(data => {
+
+      total.push(parseFloat(((data.price) * data.quantity)));
+      console.log(total);
+      const totalMoney = total.reduce(function (total, item) {
+         total += item;
+         return total;
+
+      }, 0);
+      console.log(totalMoney);
+
+      const FinalTotal = totalMoney.toFixed(2);
+      const cartTotal = document.querySelector("#cart-total");
+      cartTotal.textContent = FinalTotal;
+
+      const navCartTotal = document.querySelector(".cart-total");
+      navCartTotal.textContent = "$" + FinalTotal;
+
+
+   });
+
+   (function clearCartFunc() {
+
+      let clearCartBtn = document.querySelector("#clear-cart");
+
+      clearCartBtn.addEventListener("click", () => {
+
+         localStorage.removeItem("productInCart");
+         window.location.reload();
+
+      });
+
+
+   })();
+
+
+   (function checkout() {
+      let checkOutBtn = document.querySelector("#checkout");
+      checkOutBtn.addEventListener("click", () => {
+         var dataInLocalStorage = JSON.parse(localStorage.getItem("productInCart"));
+         const cartTotal = document.querySelector("#cart-total");
+         console.log(cartTotal);
+
+         if (cartTotal.textContent == 0 || dataInLocalStorage == null) {
+            alert("please add items to cart");
+         }
+         else { alert("Your Order has been placed successfully"); }
+
+
+      })
+
+
+   })();
+
+
+};

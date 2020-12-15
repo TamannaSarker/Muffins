@@ -213,6 +213,50 @@ p{
 
 /* -------------------------- Login page end ----------------- */
 
+/*cart*/
+.cart {
+    position: fixed;
+    min-height: 10rem;
+    top: 80px;
+    right: 0;
+    transition: all 0.3s ease-in-out;
+    background: rgba(255, 255, 255);
+    width: 0;
+    overflow:auto;
+    z-index:1;
+  }
+  .show-cart {
+    width: 25rem;
+    padding: 2rem 1.5rem;
+    transform: rotateY(-360deg);
+    cursor: pointer;
+    overflow:auto;
+  }
+.fa-times-circle{
+position:absolute;
+top:0;
+right:0;
+
+}
+
+
+
+  .cart-item {
+    transition: all 2s ease-in-out;
+    display: grid;
+    grid-template-columns:80px 200px 10px ;
+    column-gap:2%;
+    grid-template-rows:auto;
+    margin-bottom:50px;
+    overflow:auto;
+  }
+  .cart-item input{
+height:20px;
+
+  }
+
+
+
 
 /* -------------------------- ADMIN PAGE ----------------- */
 
@@ -304,7 +348,7 @@ p{
     background-color:navajowhite;
     color: white;
     transition: 0.5s;
-
+cursor: pointer;
 }
 .container{
     margin: 70px;
@@ -382,5 +426,92 @@ p{
     }
     
 /*cart page*/
+/* Contact site*/
+.bg{
+    background-color: #ff69b4;
+   
+}
+.bg1{
+    padding-top: 15px;
+}
+.contact{
+    background-image: url(images/biography-bg.png);
+    padding: 100px;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.wrapper{
+    max-width: 350px;
+    width: 100%;
+    background: #fff;
+    padding: 25px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px 2px gray; 
+  }
+  
+  .wrapper h2{
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #332902;
+  }
+  
+  .wrapper .input_field{
+    margin-bottom: 10px;
+  }
+  
+  .wrapper .input_field input[type="text"],
+  .wrapper textarea{
+    border: 1px solid #e0e0e0;
+    width: 100%;
+    padding: 10px;
+  }
+  
+  .wrapper textarea{
+    resize: none;
+    height: 80px;
+  }
+  
+  .wrapper .submit input[type="submit"]{
+    border: 0px;
+    margin-top: 15px;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    background:hotpink;
+    color: #332902;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  #error_message{
+    margin-bottom: 20px;
+    background: navajowhite;
+    padding: 0px;
+    text-align: center;
+    font-size: 14px;
+    transition: all 0.5s ease;
+  }
+
 
 /* Test*/
+/*pagination*/
+center{
+    height: 100px;
+    
+}
+ .button{
+    padding: 5px;
+    margin-top: 25px;
+    cursor: pointer;
+    background-color: hotpink;
+    border: none;
+}
+
