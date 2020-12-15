@@ -1,7 +1,3 @@
-
-//------------ LOGIN SECTION -------------------------
-
-
 function validate() {
    var username = document.getElementById("username").value;
    var password = document.getElementById("password").value;
@@ -26,92 +22,96 @@ function validate() {
       var valueCount
       //plus
 
-//------------ LOGIN SECTION -------------------------
+      document.querySelector("#plus-btn").addEventListener("click", function () {
+         valueCount = document.getElementById("quantity").value;
 
+         document.getElementById("quantity").value = valueCount
+         if (valueCount > 1) {
+            document.querySelector("#minus-btn").removeAttribute("disabled")
+            document.querySelector("#minus-btn").classList.remove("disabled")
+         }
 
-function validate() {
-   var username = document.getElementById("username").value;
-   var password = document.getElementById("password").value;
-
-   if (username == "admin" && password == "123") {
-      alert("Login succesful");
-
-      window.location = "file:///Users/lea/Documents/GitHub/Muffins/admin.html";
-      return false;
-   }
-   else {
-      alert("Login failed");
-   }
-
-   (function () {
-      const loginInformation = document.getElementById("loginInfo");
-      const loginNow = document.getElementById("login");
-
-      loginInformation.addEventListener("click", function () {
-         loginNow.classList.toggle("showLogin");
       })
+      //minus
+      document.querySelector("#minus-btn").addEventListener("click", function () {
+         valueCount = document.getElementById("quantity").value;
 
-   })
+         valueCount--;
+
+
+         document.getElementById("quantity").value = valueCount
+         if (valueCount == 1) {
+            document.querySelector("#minus-btn").setAttribute("disabled", "disabled")
+         }
+
+
+
+      });
+
+
+
+   });
+
 }
-
-
 //------------ LOGIN SECTION END -------------------------
 
 
-//------------ ADMIN SECTION-------------------------
+window.onload = function () {
+   /*select the cart link and the cart div and add a click event listner to show the cart by adding the css class using classList function*/
+   const cartInfo = document.querySelector("#cart-info");
+   const cart = document.querySelector("#cart");
+   const closeBtn = document.querySelector(".fa-times-circle");
+   cartInfo.addEventListener("click", function () {
+      cart.classList.add("show-cart");
+   });
 
-let products = [
-   {
-       name: "Mint Cupcake",
-       price: 15,
-   },
-   {
-       name: "Strawberry Cupcake",
-       price: 10,
-   },
-   {
-       name: "Chocolate Cupcake",
-       price: 5,
-   }
-]
+   closeBtn.addEventListener("click", function () {
+      cart.classList.remove("show-cart");
+   });
 
-function addNewValue(e) {
+   //adding data to local storage
+   const addToCartBtn = document.getElementsByClassName("link-button");
+   let items = [];
+   for (let i = 0; i < addToCartBtn.length; i++) {
+      addToCartBtn[i].addEventListener("click", function (e) {
+         if (typeof (localStorage) !== 'undefined') {
+            let item = {
+               id: i + 1,
+               name: e.target.parentElement.parentElement.children[0].children[0].textContent,
+               price: e.target.parentElement.children[0].children[0].textContent,
+               quantity: 1
+            };
+            let fullPath = e.target.parentElement.parentElement.previousElementSibling.src;
+            let pos = fullPath.indexOf("images") + 6;
+            let partPath = fullPath.slice(pos);
+            item.img = `img-cart${partPath}`;
+            items.push(item);
+            // console.log(items);
+            if (JSON.parse(localStorage.getItem("productInCart")) === null) {
+               localStorage.setItem("productInCart", JSON.stringify(items));
+               window.location.reload();
 
-   e.preventDefault();
+            } else {
+               const localItem = JSON.parse(localStorage.getItem("productInCart"));
+               localItem.map(data => {
+                  if (item.id == data.id) {
+                     item.quantity = data.quantity + 1;
+                  } else {
+                     items.push(data);
+                  }
+               });
 
-   let newName = document.querySelector("#enterProductName").value;
-   let newPrice = document.querySelector("#enterPrice").value;
-
-   let newInput = {
-      name: newName,
-      price: newPrice,
-   }
-
-   let adminContainer = document.querySelector(".adminContainer");
-   if (adminContainer) {
-
-      const divNewName = document.querySelector(".product-name-style");
-      divNewName.innerHTML = newName;
-      
-      const divNewPrice = document.querySelector(".product-price-style");
-      divNewPrice.innerHTML = newPrice;
-
-      products.push(newInput);
-
-      console.log("This are my items: ", products);
-
-   }
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-   document.querySelector("#submit").addEventListener("click", addNewValue);
-})
-
-//------------ ADMIN SECTION END -------------------------
+               localStorage.setItem("productInCart", JSON.stringify(items));
+               console.log(items);
+               window.location.reload();
+               console.log(items);
+            }
 
 
+         } else {
+            alert("localstorage is not set");
 
-document.querySelector("#minus-btn").setAttribute("disabled", "disabled");
+         }
 
       });
    };
