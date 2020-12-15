@@ -90,7 +90,7 @@ window.onload = function () {
             let partPath = fullPath.slice(pos);
             item.img = `img-cart${partPath}`;
             items.push(item);
-            console.log(items);
+            // console.log(items);
             if (JSON.parse(localStorage.getItem("productInCart")) === null) {
                localStorage.setItem("productInCart", JSON.stringify(items));
                window.location.reload();
@@ -135,7 +135,7 @@ window.onload = function () {
    const cartItem = document.createElement("div");
    cartItem.classList.add("cart-item");
    if (JSON.parse(localStorage.getItem("productInCart")) == null) {
-      cartItem.innerHTML += "No items in cart";
+      cartItem.innerHTML = `<p>"No items in cart"</p>`;
 
    } else {
       var dataInLocalStorage = JSON.parse(localStorage.getItem("productInCart"));
@@ -150,8 +150,10 @@ window.onload = function () {
                  <span>$</span>
                  ${data.price}</span>
                  <p id="cart-item-title" class="font-weight-bold mb-0">quantity:${data.quantity}</p>
-                 <label for="number">quantity</label>
-                 <input type="number id="number" value="1" step="1">
+                 <div>
+                 <label for="quantity">Quantity:</label>
+                 <input type="number" id="quantity" name="quantity" min="1" max="5">
+                 </div>
                 
              </div>
             
