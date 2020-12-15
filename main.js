@@ -61,7 +61,7 @@ function validate() {
 
 
 window.onload = function () {
-   /*select the cart link and the cart div and add a click event listner to show the cart by adding the css class using classList function, toggle helps in removing the css class when we again click on the cart link */
+   /*select the cart link and the cart div and add a click event listner to show the cart by adding the css class using classList function*/
    const cartInfo = document.querySelector("#cart-info");
    const cart = document.querySelector("#cart");
    const closeBtn = document.querySelector(".fa-times-circle");
@@ -81,7 +81,7 @@ window.onload = function () {
          if (typeof (localStorage) !== 'undefined') {
             let item = {
                id: i + 1,
-               name: e.target.parentElement.previousElementSibling.children[0].textContent,
+               name: e.target.parentElement.parentElement.children[0].children[0].textContent,
                price: e.target.parentElement.children[0].children[0].textContent,
                quantity: 1
             };
