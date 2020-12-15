@@ -17,7 +17,7 @@ h2 {
 
 /*navbar*/
 nav{
-    position: fixed;
+    /* position: fixed; --Only temporary-- */
     background-color: #ffffff;
     height: 80px;
     width: 100%;
@@ -213,6 +213,41 @@ p{
 
 /* -------------------------- Login page end ----------------- */
 
+
+/* -------------------------- ADMIN PAGE ----------------- */
+
+
+
+
+
+
+
+/* -------------------------- ADMIN PAGE END ----------------- */
+
+
+
+/*------------------- DONT WORK ---- Same functionality as cart-------------------*/
+
+/*
+.login {
+    position: absolute;
+    min-height: 10rem;
+    top: 0px;
+    right: 0;
+    transition: all 0.3s ease-in-out;
+    background: rgba(255, 255, 255);
+    width: 0;
+    overflow: hidden;
+  }
+  
+.showLogin{
+    width: 18rem;
+    padding: 2rem 1.5rem;
+    transform: rotateY(-360deg);
+}
+
+*/
+/*------------------- DONT WORK ---- Same functionality as cart-------------------*/
 
 /* Card*/
 .card{
