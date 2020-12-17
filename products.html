@@ -32,9 +32,12 @@
 
         localStorage.setItem("productInCart", JSON.stringify(items));
         window.location.reload();
-    }
+    };
+
+
 
 </script>
+<script src="dynamicProduct.js"></script>
 
 <body>
     <!-- Hamburger menu using html and css -->
@@ -48,6 +51,7 @@
         <ul>
             <li><a href="index.html" class="active">Home</a></li>
             <li><a href="products.html">Products</a></li>
+            <li><a href="addProduct.html">addProduct</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#contact">Contact</a></li>
             <li><a id="cart-info" href="#cart">
@@ -87,211 +91,13 @@
     <!--Card Section-->
     <section>
         <div class="card-containers">
-            <div class="card">
-                <img class="img-style" src="images/jul-muffin.jpg" alt="Julmuffin">
 
-                <div class="card-body">
-                    <div class="card-title">
-                        <div class="product-name-style">Christmas cupcakes</div>
-                    </div>
-                    <div class="card-desc">
-                        <div class="product-price-style">$ <span> 2</span> </div>
-                        <button class="link-button">Add To Cart</button>
-                    </div>
-                    <div>
-
-                        <button id="minus-btn" class="quantity"><i class="fas fa-minus"></i></button>
-                        <input type="text" class="input" id="quantity1" value="0">
-                        <button id="plus-btn" class=""><i class="fas fa-plus"></i></button>
-
-                    </div>
-
-                </div>
-            </div>
-            <div class="card">
-                <img class="img-style" src="images/blåbärsmuffin.jpg" alt="">
-
-                <div class="card-body">
-                    <div class="card-title">
-                        <div class="product-name-style">Blueberry cupcakes</div>
-                    </div>
-                    <div class="card-desc">
-                        <div class="product-price-style">$<span>3</span> </div>
-                        <button class="link-button">Add To Cart</button>
-                    </div>
-                    <div>
-
-                        <button id="minus-btn" class="quantity"><i class="fas fa-minus"></i></button>
-                        <input type="text" class="input" id="quantity2" value="0">
-                        <button id="plus-btn" class=""><i class="fas fa-plus"></i></button>
-
-                    </div>
-
-                </div>
-            </div>
-            <div class="card">
-                <img class="img-style" src="images/kanelmuffin.jpg" alt="">
-
-                <div class="card-body">
-                    <div class="card-title">
-                        <div class="product-name-style">Cinnamon cupcakes</div>
-                    </div>
-                    <div class="card-desc">
-                        <div class="product-price-style">$ <span> 3</span></div>
-                        <button class="link-button">Add To Cart</button>
-                    </div>
-                    <div>
-
-                        <button id="minus-btn" class="quantity"><i class="fas fa-minus"></i></button>
-                        <input type="text" class="input" id="quantity3" value="0">
-                        <button id="plus-btn" class=""><i class="fas fa-plus"></i></button>
-
-                    </div>
-
-                </div>
-            </div>
 
         </div>
+
     </section>
 
-    <section>
-        <div class="card-containers">
-            <div class="card">
-                <img class="img-style" src="images/kardemummamuffin.jpg" alt="">
 
-                <div class="card-body">
-                    <div class="card-title">
-                        <div class="product-name-style">Cardamom cupcakes</div>
-                    </div>
-                    <div class="card-desc">
-                        <div class="product-price-style">$ <span>1</span>
-                        </div>
-                        <button class="link-button">Add To Cart</button>
-                    </div>
-                    <div>
-
-                        <button id="minus-btn" class="quantity"><i class="fas fa-minus"></i></button>
-                        <input type="text" class="input" id="quantity4" value="0">
-                        <button id="plus-btn" class=""><i class="fas fa-plus"></i></button>
-
-                    </div>
-
-                </div>
-            </div>
-            <div class="card">
-                <img class="img-style" src="images/Chocolate-Muffin.jpg" alt="">
-
-                <div class="card-body">
-                    <div class="card-title">
-                        <div class="product-name-style">Chocolate cupcakes</div>
-                    </div>
-                    <div class="card-desc">
-                        <div class="product-price-style">$ <span>2</span> </div>
-                        <button class="link-button">Add To Cart</button>
-                    </div>
-                    <div>
-
-                        <button id="minus-btn" class="quantity"><i class="fas fa-minus"></i></button>
-                        <input type="text" class="input" id="quantity5" value="0">
-                        <button id="plus-btn" class=""><i class="fas fa-plus"></i></button>
-
-                    </div>
-
-                </div>
-            </div>
-            <div class="card">
-                <img class="img-style" src="images/julmuffin-och-pepparkakor.jpg" alt="">
-
-                <div class="card-body">
-                    <div class="card-title">
-                        <div class="product-name-style">Gingerbread cupcakes</div>
-                    </div>
-                    <div class="card-desc">
-                        <div class="product-price-style">$ <span>3</span> </div>
-                        <button class="link-button">Add To Cart</button>
-                    </div>
-                    <div>
-
-                        <button id="minus-btn" class="quantity"><i class="fas fa-minus"></i></button>
-                        <input type="text" class="input" id="quantity6" value="0">
-                        <button id="plus-btn" class=""><i class="fas fa-plus"></i></button>
-
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section>
-        <div class="card-containers">
-            <div class="card">
-                <img class="img-style" src="images/carrot-muffins.jpg" alt="">
-
-                <div class="card-body">
-                    <div class="card-title">
-                        <div class="product-name-style">Carrot cupcakes</div>
-                    </div>
-                    <div class="card-desc">
-                        <div class="product-price-style">$<span>3</span></div>
-                        <button class="link-button">Add To Cart</button>
-                    </div>
-                    <div>
-
-                        <button id="minus-btn" class="quantity"><i class="fas fa-minus"></i></button>
-                        <input type="text" class="input" id="quantity7" value="0">
-                        <button id="plus-btn" class=""><i class="fas fa-plus"></i></button>
-
-                    </div>
-
-                </div>
-            </div>
-            <div class="card">
-                <img class="img-style" src="images/pepperskakmuffin.jpg" alt="">
-
-                <div class="card-body">
-                    <div class="card-title">
-                        <div class="product-name-style">Festive cupcakes</div>
-                    </div>
-                    <div class="card-desc">
-                        <div class="product-price-style">$<span>2</span></div>
-                        <button class="link-button">Add To Cart</button>
-                    </div>
-                    <div>
-
-                        <button id="minus-btn" class="quantity"><i class="fas fa-minus"></i></button>
-                        <input type="text" class="input" id="quantity8" value="0">
-                        <button id="plus-btn" class=""><i class="fas fa-plus"></i></button>
-
-                    </div>
-
-                </div>
-            </div>
-            <div class="card">
-                <img class="img-style" src="images/jul-muffin.jpg" alt="">
-
-                <div class="card-body">
-                    <div class="card-title">
-                        <div class="product-name-style">Vanilla cupcakes</div>
-                    </div>
-                    <div class="card-desc">
-                        <div class="product-price-style">$<span>2</span></div>
-                        <button class="link-button">Add To Cart</button>
-                    </div>
-                    <div>
-
-                        <button id="minus-btn" class="quantity"><i class="fas fa-minus"></i></button>
-                        <input type="text" class="input" id="quantity9" value="0">
-                        <button id="plus-btn" class=""><i class="fas fa-plus"></i></button>
-
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
-    </section>
     <script src="main.js"></script>
 </body>
 
