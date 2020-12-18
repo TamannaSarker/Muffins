@@ -117,23 +117,29 @@ window.onload = function () {
    };
 
    let currentDataIn = JSON.parse(localStorage.getItem("productInCart"));
-   console.log(currentDataIn);
+ 
 
    const headerQuantityIcon = document.querySelector(".item-total");
    let quantity = 0;
 
-   currentDataIn.map(data => {
-      quantity = quantity + data.quantity;
-
-   });
-   headerQuantityIcon.textContent = quantity;
-
+   
+  
    const cartItem = document.createElement("div");
    cartItem.classList.add("cart-item");
-   if (JSON.parse(localStorage.getItem("productInCart")) == null) {
+  // kolla att de finns data att loopa igenom
+ 
+
+
+   if (currentDataIn == null) {
       cartItem.innerHTML = `<p>"No items in cart"</p>`;
 
    } else {
+      currentDataIn.map(data => {
+         quantity = quantity + data.quantity;
+   
+      });
+      headerQuantityIcon.textContent = quantity;   
+
       var dataInLocalStorage = JSON.parse(localStorage.getItem("productInCart"));
 
       dataInLocalStorage.map(data => {
@@ -178,16 +184,19 @@ function showTotal() {
 
    const total = [];
    const showTotal = JSON.parse(localStorage.getItem("productInCart"));
+
+   // kollar att arrayen "productInCart" finns i localStorage
+   if(showTotal !== null) {
    showTotal.map(data => {
 
       total.push(parseFloat(((data.price) * data.quantity)));
-      console.log(total);
+      // console.log(total);
       const totalMoney = total.reduce(function (total, item) {
          total += item;
          return total;
 
       }, 0);
-      console.log(totalMoney);
+      // console.log(totalMoney);
 
       const FinalTotal = totalMoney.toFixed(2);
       const cartTotal = document.querySelector("#cart-total");
@@ -198,7 +207,7 @@ function showTotal() {
 
 
    });
-
+}
    (function clearCartFunc() {
 
       let clearCartBtn = document.querySelector("#clear-cart");
@@ -219,13 +228,15 @@ function showTotal() {
       checkOutBtn.addEventListener("click", () => {
          var dataInLocalStorage = JSON.parse(localStorage.getItem("productInCart"));
          const cartTotal = document.querySelector("#cart-total");
-         console.log(cartTotal);
+         // console.log(cartTotal);
 
          if (cartTotal.textContent == 0 || dataInLocalStorage == null) {
             alert("please add items to cart");
          }
-         else { alert("Your Order has been placed successfully"); }
-
+         else { 
+            alert("Your Order has been placed successfully! Proceeding to checkout...");
+            window.location.replace("/checkout.html")
+         }
 
       })
 

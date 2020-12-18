@@ -15,6 +15,10 @@ h2 {
     padding-bottom: 15px;
 }
 
+/* checkout */
+.checkout > div, .download-pdf {
+    margin: 50px;
+}
 /*navbar*/
 nav{
     /* position: fixed; --Only temporary-- */
@@ -50,7 +54,7 @@ nav ul li a{
     padding: 7px 13px; 
     text-transform: uppercase;
 }
-a:active, a:hover{
+nav ul li > a:active, nav ul li > a:hover {
     background-color:hotpink;
     color: white;
     letter-spacing: 6px;
@@ -151,10 +155,10 @@ p{
     text-transform: uppercase;
     text-decoration: none;
     letter-spacing: 2px;
-    transition: 0.5s;
+    /* transition: 0.5s; */
 }
 .btn:hover{
-    letter-spacing: 6px;
+    /* letter-spacing: 6px; */
 }
 
 /* -------------------------- Login page --------------------- */
