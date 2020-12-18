@@ -429,77 +429,55 @@ cursor: pointer;
 /* Contact site*/
 .bg{
     background-color: #ff69b4;
-   
-}
-.bg1{
-    padding-top: 15px;
-}
-.contact{
-    background-image: url(images/biography-bg.png);
-    padding: 100px;
-    align-items: center;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-.wrapper{
-    max-width: 350px;
-    width: 100%;
-    background: #fff;
-    padding: 25px;
-    border-radius: 5px;
-    box-shadow: 2px 2px 2px 2px gray; 
   }
-  
-  .wrapper h2{
-    text-align: center;
+  .contact{
+    padding-top: 90px;
+  }
+  .contact-container {
+    width: 90%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0px 0px 20px #00000010;
+    background-color: white;
+    border-radius: 8px;
     margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    color: #332902;
   }
-  
-  .wrapper .input_field{
-    margin-bottom: 10px;
-  }
-  
-  .wrapper .input_field input[type="text"],
-  .wrapper textarea{
-    border: 1px solid #e0e0e0;
+  .form-group {
     width: 100%;
-    padding: 10px;
+    margin-top: 20px;
+    font-size: 20px;
+  }
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 5px;
+    font-size: 12px;
+    border: 1px solid rgba(128, 128, 128, 0.199);
+    margin-top: 5px;
   }
   
-  .wrapper textarea{
-    resize: none;
-    height: 80px;
+  textarea {
+    resize: vertical;
   }
-  
-  .wrapper .submit input[type="submit"]{
-    border: 0px;
-    margin-top: 15px;
-    padding: 10px;
+  button[type="submit"] {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 20px;
+    font-size: 22px;
+    border-radius: 8px;
+    font-family: "Montserrat";
+    color: hotpink;
     text-align: center;
-    width: 100%;
-    background:hotpink;
-    color: #332902;
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    font-weight: bold;
-    border-radius: 10px;
     cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s ease background-color;
+  }
+  button[type="submit"]:hover {
+    background-color: rgb(214, 226, 236);
   }
   
-  #error_message{
-    margin-bottom: 20px;
-    background: navajowhite;
-    padding: 0px;
-    text-align: center;
-    font-size: 14px;
-    transition: all 0.5s ease;
-  }
-
 
 /* Test*/
 /*pagination*/
