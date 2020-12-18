@@ -26,8 +26,10 @@ function validate() {
 
 //-------------Product card add to product.html------------
 
-window.onload = function cardAddFunction() {
 
+
+window.onload = function cardAddFunction() {
+   //Setting up localstorage with products array
    let products = [{
       id: 1,
       itemName: "Christmas cupcakes",
@@ -53,13 +55,13 @@ window.onload = function cardAddFunction() {
 
    ];
 
-
+   //setting up localstorage
    if (JSON.parse(localStorage.getItem("ourProducts")) == null) {
       localStorage.setItem("ourProducts", JSON.stringify(products));
       //window.location.reload();
    }
    else {
-
+      //if localstorage has data creating those products dynamically in product.html
       let currentProducts = JSON.parse(localStorage.getItem("ourProducts"));
 
       console.log(currentProducts);
@@ -86,11 +88,6 @@ window.onload = function cardAddFunction() {
    };
 
 
-
-
-
-
-
    //cart adding function
    /*cart display function*/
 
@@ -112,6 +109,7 @@ window.onload = function cardAddFunction() {
       let items = [];
       for (let i = 0; i < addToCartBtn.length; i++) {
          addToCartBtn[i].addEventListener("click", function (e) {
+
             if (typeof (localStorage) !== 'undefined') {
                let item = {
                   id: i + 1,
@@ -152,6 +150,8 @@ window.onload = function cardAddFunction() {
             }
 
          });
+
+
       };
 
       let currentDataIn = JSON.parse(localStorage.getItem("productInCart"));
@@ -209,7 +209,7 @@ window.onload = function cardAddFunction() {
 
 
    })();
-
+   //total function for items added to cart
    function showTotal() {
 
       const total = [];
@@ -234,7 +234,7 @@ window.onload = function cardAddFunction() {
 
 
       });
-
+      //clear cart function, which clears the localstorage
       (function clearCartFunc() {
 
          let clearCartBtn = document.querySelector("#clear-cart");
@@ -249,7 +249,7 @@ window.onload = function cardAddFunction() {
 
       })();
 
-
+      //checkout function
       (function checkout() {
          let checkOutBtn = document.querySelector("#checkout");
          checkOutBtn.addEventListener("click", () => {

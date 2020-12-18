@@ -364,6 +364,13 @@ top:90px;
     transition: 0.5s;
 
 }
+/* .link-button:after{
+
+background-color: green;
+content:"In cart";
+
+} */
+
 .container{
     margin: 70px;
     display: flex;
