@@ -8,7 +8,7 @@
     <link rel="icon" href="images/logo-1.jpeg" type="image/x-icon">
     <link rel="stylesheet" href="style.css" type="text/css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet" />
-    <script>
+    <!--  <script>
         function Delete(e) {
             let items = [];
             console.log(items);
@@ -34,7 +34,7 @@
         }
 
     </script>
-
+-->
 
 </head>
 
@@ -52,11 +52,12 @@
             <li><a href="" class="active">Home</a></li>
             <li><a href="products.html">Products</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a id="cart-info" href="#cart">
-                    <span class="item-total">0</span>
-                    <i class="fas fa-cart-plus"></i>Cart
-                    <span class="cart-total"></span>
+            <li><a href="#contact">Contact</a></li>
+            <li id="loginInfo"><a href="login.html">Login
+            </a>
+        </li>
+            <li class="cart"><a href="#cart">
+                    <ion-icon name="cart-outline"></ion-icon>Cart <span>0</span>
                 </a>
             </li>
         </ul>
@@ -70,35 +71,18 @@
         </div>
     </header>
 
-    <!--All cart info is in product.html-->
-    <!--cart div -->
-    <div id="cart" class="cart">
-
-        <i class="far fa-times-circle"></i>
-        <h2>Your Cart</h2>
-
-
-        <!--Cartitems will be dynamically added here-->
-
-        <div class="cart-total-container">
-            <h5>total: </h5>
-            <h5> $ <strong id="cart-total" class="font-weight-bold">0</strong> </h5>
+    <!-- Login div -->
+    <div id="login" class="showLogin">
+        <div class="loginItem">
+            <p>Test test test</p>
         </div>
-        <!--end cart total -->
-        <!-- cart buttons -->
-        <div class="cart-buttons-container ">
-            <a href="#" id="clear-cart" class="btn btn-outline-secondary text-uppercase btn-pink">clear cart</a>
-            <a href="#" id="checkout" class="btn btn-outline-secondary text-uppercase btn-pink">checkout</a>
-        </div>
+     
     </div>
 
+    <!--End of login div-->
 
 
-    <!--End of cart div-->
-
-
-
-
+    <!--All cart info is in cart.html-->
     <!--About-->
     <section class="about">
         <div class="row">

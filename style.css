@@ -17,7 +17,7 @@ h2 {
 
 /*navbar*/
 nav{
-    position: fixed;
+    /* position: fixed; --Only temporary-- */
     background-color: #ffffff;
     height: 80px;
     width: 100%;
@@ -258,34 +258,41 @@ height:20px;
 
 
 
-  /* end of cart */
-  /* cart item */
-  .cart-item-remove {
-    color:#ef7998;
-    transition: all 1s ease-in-out;
-  }
-  .cart-item-remove:hover {
-    transform: scale(1.1);
-    color: #000;;
-  }
-  #cart-item-price {
-    font-size: 0.8rem;
-  }
+/* -------------------------- ADMIN PAGE ----------------- */
 
-  .cart-total-container{
-display:flex;
-justify-content: center;
-align-items: center;
 
+
+
+
+
+
+/* -------------------------- ADMIN PAGE END ----------------- */
+
+
+
+/*------------------- DONT WORK ---- Same functionality as cart-------------------*/
+
+/*
+.login {
+    position: absolute;
+    min-height: 10rem;
+    top: 0px;
+    right: 0;
+    transition: all 0.3s ease-in-out;
+    background: rgba(255, 255, 255);
+    width: 0;
+    overflow: hidden;
   }
-  .cart-buttons-container{
-    display:flex;
-    justify-content: space-between;
-  }
-  .cart-buttons-container a{
-      margin:10px;
-  }
-/*End of cart item*/
+  
+.showLogin{
+    width: 18rem;
+    padding: 2rem 1.5rem;
+    transform: rotateY(-360deg);
+}
+
+*/
+/*------------------- DONT WORK ---- Same functionality as cart-------------------*/
+
 /* Card*/
 .card{
     width: 330px;
