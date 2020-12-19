@@ -10,6 +10,10 @@ function validate() {
    else {
       alert("Login failed");
    }
+
+//------------ LOGIN SECTION END -------------------------
+
+
    document.querySelector("#minus-btn").setAttribute("disabled", "disabled");
 
    var valueCount
@@ -53,11 +57,11 @@ function validate() {
    });
 
 }
-//------------ LOGIN SECTION END -------------------------
 
 
+/* SOME ERROR
 window.onload = function () {
-   /*select the cart link and the cart div and add a click event listner to show the cart by adding the css class using classList function*/
+   //select the cart link and the cart div and add a click event listner to show the cart by adding the css class using classList function
    const cartInfo = document.querySelector("#cart-info");
    const cart = document.querySelector("#cart");
    const closeBtn = document.querySelector(".fa-times-circle");
@@ -232,3 +236,7 @@ function showTotal() {
 
    })();
 };
+*/
+//------------------------ ADMIN PAGE -------------------------------------------
+
+
