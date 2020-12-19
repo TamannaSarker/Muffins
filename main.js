@@ -1,3 +1,5 @@
+
+
 function validate() {
    var username = document.getElementById("username").value;
    var password = document.getElementById("password").value;
@@ -16,15 +18,15 @@ function validate() {
       alert("Login failed");
       return false;
    }
-}
+};
 
 //------------ LOGIN SECTION END -------------------------
 
 //-------------Product card add to product.html------------
 //plus
 
-
 window.onload = function cardAddFunction() {
+
    //Setting up localstorage with products array
    let products = [{
       id: 1,
@@ -51,7 +53,7 @@ window.onload = function cardAddFunction() {
 
    ];
 
-   //setting up localstorage
+   //------------------------setting up localstorage---------------
    if (JSON.parse(localStorage.getItem("ourProducts")) == null) {
       localStorage.setItem("ourProducts", JSON.stringify(products));
       //window.location.reload();
@@ -84,7 +86,7 @@ window.onload = function cardAddFunction() {
    };
 
 
-   //cart adding function
+   //-------------------------------cart adding function---------------------------
    /*cart display function*/
 
    (function cartFunction() {
@@ -172,9 +174,10 @@ window.onload = function cardAddFunction() {
 
          dataInLocalStorage.map(data => {
             cartItem.innerHTML += `
-         <span id="dataId" style="display:none;"> id:${data.id}</span>
-         <img src="${data.img}" class="img-fluid rounded-circle" id="item-img" alt="">
+         <img src="${data.img}" class="img-fluid rounded-circle" id="item-img" alt="muffin">
              <div class="item-text">
+             <span style="display:none;" id="dataId"> ${data.id}</span>
+
                  <p id="cart-item-title" class="font-weight-bold mb-0">${data.name}</p>
                  <span id="cart-item-price" class="cart-item-price" class="mb-0">
                  <span>$</span>
@@ -183,9 +186,10 @@ window.onload = function cardAddFunction() {
                  <label for="number">quantity</label>
                  <input type="number id="number" value="1" step="1">
 
+                 <a href="#" onclick="Delete(this)"><i class="fas fa-trash"></i></a>
+
              </div>
 
-             <a href="#" onclick=Delete(this)><i class="fas fa-trash"></i></a>
 
           `;
 
@@ -205,6 +209,9 @@ window.onload = function cardAddFunction() {
 
 
    })();
+
+
+
    //total function for items added to cart
    function showTotal() {
 

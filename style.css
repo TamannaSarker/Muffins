@@ -222,15 +222,17 @@ p{
     transition: all 0.3s ease-in-out;
     background: rgba(255, 255, 255);
     width: 0;
-    overflow:auto;
+    overflow:hidden;
     z-index:1;
+   
   }
   .show-cart {
-    width: 25rem;
+    position: fixed;
+    width: 30rem;
     padding: 2rem 1.5rem;
     transform: rotateY(-360deg);
     cursor: pointer;
-    overflow:auto;
+    overflow:hidden;
   }
 .fa-times-circle{
 position:absolute;
@@ -239,17 +241,30 @@ right:0;
 
 }
 
-
-
   .cart-item {
+    
+    padding:10px;
     transition: all 2s ease-in-out;
     display: grid;
-    grid-template-columns:80px 200px 10px ;
+    grid-template-columns:100px 200px ;
     column-gap:2%;
-    grid-template-rows:auto;
-    margin-bottom:50px;
-    overflow:auto;
+    grid-template-rows:120px; 
+    margin-bottom:20px;
+    overflow: hidden;
+overflow-y: auto;
   }
+.item-text{
+   text-transform: capitalize;
+
+
+
+
+}
+
+
+
+
+
   .cart-item input{
 width:20px;
 
