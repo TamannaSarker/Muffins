@@ -395,7 +395,8 @@ content:"In cart";
     padding: 40px;
     margin-left: 30px;
 }
-/* Sign in*/
+
+    /* Sign in*/
 .sign-in-part{ 
     display: flex;
     justify-content: space-around;
@@ -423,8 +424,6 @@ content:"In cart";
         border-radius: 30px;
         border: none;
     }
-    
-
     
 
 
