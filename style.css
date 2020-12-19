@@ -17,7 +17,7 @@ h2 {
 
 /*navbar*/
 nav{
-    position: fixed;
+    /* position: fixed; --Only temporary-- */
     background-color: #ffffff;
     height: 80px;
     width: 100%;
@@ -283,9 +283,16 @@ align-items: center;
   .cart-buttons-container a{
       margin:10px;
   }
+  
+.showLogin{
+    width: 18rem;
+    padding: 2rem 1.5rem;
+    transform: rotateY(-360deg);
+}
 
+*/
+/*------------------- DONT WORK ---- Same functionality as cart-------------------*/
 
-/*End of cart item*/
 /* Card*/
 .dynamicProductSection{
 position:absolute;
@@ -362,7 +369,7 @@ top:90px;
     background-color:navajowhite;
     color: white;
     transition: 0.5s;
-
+cursor: pointer;
 }
 /* .link-button:after{
 
@@ -446,5 +453,70 @@ content:"In cart";
     }
     
 /*cart page*/
+/* Contact site*/
+.bg{
+    background-color: #ff69b4;
+  }
+  .contact{
+    padding-top: 90px;
+  }
+  .contact-container {
+    width: 90%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0px 0px 20px #00000010;
+    background-color: white;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  .form-group {
+    width: 100%;
+    margin-top: 20px;
+    font-size: 20px;
+  }
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 5px;
+    font-size: 12px;
+    border: 1px solid rgba(128, 128, 128, 0.199);
+    margin-top: 5px;
+  }
+  
+  textarea {
+    resize: vertical;
+  }
+  button[type="submit"] {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 20px;
+    font-size: 22px;
+    border-radius: 8px;
+    font-family: "Montserrat";
+    color: hotpink;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s ease background-color;
+  }
+  button[type="submit"]:hover {
+    background-color: rgb(214, 226, 236);
+  }
+  
 
 /* Test*/
+/*pagination*/
+center{
+    height: 100px;
+    
+}
+ .button{
+    padding: 5px;
+    margin-top: 25px;
+    cursor: pointer;
+    background-color: hotpink;
+    border: none;
+}
+
