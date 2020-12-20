@@ -182,9 +182,9 @@ window.onload = function cardAddFunction() {
                  <span id="cart-item-price" class="cart-item-price" class="mb-0">
                  <span>$</span>
                  ${data.price}</span>
-                 <p id="cart-item-title" class="font-weight-bold mb-0">quantity:${data.quantity}</p>
+                 <p style="display:none;"id="cart-item-title" class="font-weight-bold mb-0">quantity:${data.quantity}</p>
                  <label for="number">quantity</label>
-                 <input type="number id="number" value="1" step="1">
+                 <input id="quantity_input" onchange="upQuantity(this)" class="cart_input_quantity" type="number" name="" value=${data.quantity} min="0" max="20">
 
                  <a href="#" onclick="Delete(this)"><i class="fas fa-trash"></i></a>
 

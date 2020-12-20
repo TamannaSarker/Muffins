@@ -25,6 +25,45 @@
             }
         }
     }
+
+    function upQuantity(id) {
+        let currentProducts = JSON.parse(localStorage.getItem("productInCart"));
+        let cartItemId = id.parentElement.children[0].textContent;
+
+        console.log("id from quantity click ", cartItemId);
+
+        for (let i = 0; i < currentProducts.length; i++) {
+            if (cartItemId == currentProducts[i].id) {
+
+                console.log("quanity changed value ", document.getElementById('quantity_input').value);
+                var quantity_input_change = parseInt(document.getElementById('quantity_input').value);
+
+                if (quantity_input_change <= 0) {
+
+                    currentProducts.splice(i, 1);
+                    localStorage.setItem("productInCart", JSON.stringify(currentProducts));
+                    window.location.reload();
+
+
+                } else {
+                    currentProducts[i].quantity = quantity_input_change;
+                    localStorage.setItem("productInCart", JSON.stringify(currentProducts));
+                    window.location.reload();
+                }
+
+            }
+        }
+    }
+
+
+
+
+
+
+
+
+
+
 </script>
 <script src="dynamicProduct.js"></script>
 
