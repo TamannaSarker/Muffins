@@ -311,7 +311,19 @@ align-items: center;
 /* Card*/
 .dynamicProductSection{
 position:absolute;
-top:90px;
+top:100px;
+
+}
+.dynamicProductSection h2{
+   text-align: center;
+}
+
+.wrapper{
+
+    margin-top:50px ;
+    display:flex;
+    justify-content: center;
+    align-items: center;
 
 
 }
@@ -347,14 +359,26 @@ top:90px;
 }
      
 .card-containers{
-    padding-top: 100px;
+    padding-top: 50px;
     box-sizing: border-box;
-    display: flex;
-    flex-wrap: wrap;
+    display: inline-flex;
+    width: 100%;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-around;
 
 }
+
+.btn-disable{
+    cursor: not-allowed;
+    pointer-events: none;
+    color: #0f0f0f;
+    background-color: #08f356;
+    content:"In Cart"
+
+}
+
+
 
 .product-price-style {
     font-weight: bold;

@@ -106,6 +106,7 @@ window.onload = function cardAddFunction() {
       const addToCartBtn = document.getElementsByClassName("link-button");
       let items = [];
       for (let i = 0; i < addToCartBtn.length; i++) {
+
          addToCartBtn[i].addEventListener("click", function (e) {
 
             if (typeof (localStorage) !== 'undefined') {
@@ -172,11 +173,13 @@ window.onload = function cardAddFunction() {
       } else {
          var dataInLocalStorage = JSON.parse(localStorage.getItem("productInCart"));
 
+         var i = 0;
          dataInLocalStorage.map(data => {
+
             cartItem.innerHTML += `
          <img src="${data.img}" class="img-fluid rounded-circle" id="item-img" alt="muffin">
              <div class="item-text">
-             <span style="display:none;" id="dataId"> ${data.id}</span>
+             <span style="display" id="dataId"> ${data.id}</span>
 
                  <p id="cart-item-title" class="font-weight-bold mb-0">${data.name}</p>
                  <span id="cart-item-price" class="cart-item-price" class="mb-0">
@@ -184,7 +187,7 @@ window.onload = function cardAddFunction() {
                  ${data.price}</span>
                  <p style="display:none;"id="cart-item-title" class="font-weight-bold mb-0">quantity:${data.quantity}</p>
                  <label for="number">quantity</label>
-                 <input id="quantity_input" onchange="upQuantity(this)" class="cart_input_quantity" type="number" name="" value=${data.quantity} min="0" max="20">
+                 <input id="quantity_input_`+ i + `" onchange="upQuantity(this)" class="cart_input_quantity" type="number" name="" value=${data.quantity} min="0" max="20">
 
                  <a href="#" onclick="Delete(this)"><i class="fas fa-trash"></i></a>
 
@@ -192,6 +195,8 @@ window.onload = function cardAddFunction() {
 
 
           `;
+
+            i++;
 
          });
 

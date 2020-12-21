@@ -30,13 +30,13 @@
         let currentProducts = JSON.parse(localStorage.getItem("productInCart"));
         let cartItemId = id.parentElement.children[0].textContent;
 
-        console.log("id from quantity click ", cartItemId);
+
 
         for (let i = 0; i < currentProducts.length; i++) {
             if (cartItemId == currentProducts[i].id) {
 
-                console.log("quanity changed value ", document.getElementById('quantity_input').value);
-                var quantity_input_change = parseInt(document.getElementById('quantity_input').value);
+                console.log("quanity changed value ", document.getElementById('quantity_input_' + i).value);
+                var quantity_input_change = parseInt(document.getElementById('quantity_input_' + i).value);
 
                 if (quantity_input_change <= 0) {
 
@@ -54,13 +54,6 @@
             }
         }
     }
-
-
-
-
-
-
-
 
 
 
