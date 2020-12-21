@@ -179,7 +179,7 @@ window.onload = function cardAddFunction() {
             cartItem.innerHTML += `
          <img src="${data.img}" class="img-fluid rounded-circle" id="item-img" alt="muffin">
              <div class="item-text">
-             <span style="display" id="dataId"> ${data.id}</span>
+             <span style="display:none;" id="dataId"> ${data.id}</span>
 
                  <p id="cart-item-title" class="font-weight-bold mb-0">${data.name}</p>
                  <span id="cart-item-price" class="cart-item-price" class="mb-0">
