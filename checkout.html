@@ -6,9 +6,10 @@
     <title>CHECKOUT</title>
     <link rel="stylesheet" href="style.css">
     <script src="checkout.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
 </head>
 <body>
-    <div class="checkout">
+    <div class="checkout" id="checkout">
         
         <!-- <div class="checkout-title">muffin</div>
         <div class="checkout-price">pris 24 kr</div>
@@ -16,6 +17,13 @@
         <div class="checkout-total"> totalt pris 48 kr</div> -->
         
     </div>
-    <button class="download-pdf"><a href="/checkout.html" download="checkout.pdf">Download pdf</a></button>
+    <button id="download-pdf" class="download-pdf">Download PDF</button>
+  <!-- https://github.com/jayanthbabu123/how-to-convert-html-web-pages-to-pdf-in-javascript 
+
+    https://www.youtube.com/watch?v=DcN-AL6lXaY
+-->
+
+
+    
 </body>
 </html>

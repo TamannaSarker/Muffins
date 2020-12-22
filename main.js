@@ -154,7 +154,7 @@ window.onload = function () {
                  <p id="cart-item-title" class="font-weight-bold mb-0">quantity:${data.quantity}</p>
                  <div>
                  <label for="quantity">Quantity:</label>
-                 <input type="number" id="quantity" name="quantity" min="1" max="5">
+                 <input type="number" id="quantity" name="quantity" value="${data.quantity}" min="1" max="5">
                  </div>
                 
              </div>
