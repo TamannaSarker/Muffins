@@ -213,6 +213,23 @@ p{
 
 /* -------------------------- Login page end ----------------- */
 
+
+/* -------------------------- Admin page ----------------- */
+
+.remove-button{
+    margin: 10px;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+}
+
+#form{
+    margin-top: 1rem;
+}
+
+
+/* -------------------------- Admin page end ----------------- */
+
 /*cart*/
 .cart {
     position: fixed;
@@ -305,9 +322,6 @@ align-items: center;
     transform: rotateY(-360deg);
 }
 
-*/
-/*------------------- DONT WORK ---- Same functionality as cart-------------------*/
-
 /* Card*/
 .dynamicProductSection{
 position:absolute;
@@ -324,8 +338,8 @@ top:100px;
     display:flex;
     justify-content: center;
     align-items: center;
-
-
+    display: flex;
+    flex-direction: column;
 }
 
 .card{
@@ -335,7 +349,8 @@ top:100px;
     border-radius: 5px; 
     text-align: center; 
     background: #f9f9f9;
-    padding-bottom:15px;    
+    padding-bottom:15px;  
+    margin-top: 10rem;  
 }
 .img-style{
     width: 100%;

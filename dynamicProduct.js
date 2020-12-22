@@ -44,14 +44,56 @@ window.onload = function () {
         localStorage.setItem("ProductsCount", id);
 
         alert("item added");
-
-
+        window.location.reload();
 
     }
-
 }
 
+if (JSON.parse(localStorage.getItem("ourProducts")) == null) {
+    localStorage.setItem("ourProducts", JSON.stringify(products));
+    //window.location.reload();
+ }
+ else {
+    //if localstorage has data creating those products dynamically in product.html
+    let currentProducts = JSON.parse(localStorage.getItem("ourProducts"));
 
+    console.log(currentProducts);
 
+    for (let i = 0; i < currentProducts.length; i++) {
+       let cardContainersDiv = document.querySelector(".card-containers");
+       let newDiv = document.createElement("div");
+       newDiv.classList.add("card");
+       newDiv.innerHTML += `
+       <img class="img-style" src="${currentProducts[i].imgSrc}" alt="Julmuffin">
 
+       <div class="card-body">
+           <div class="card-title">
+               <div class="product-name-style">${currentProducts[i].itemName}</div>
+               <span>${currentProducts[i].id}</span>
+           </div>
+           <div class="card-desc">
+               <div class="product-price-style">$ <span> ${currentProducts[i].price}</span> </div>
+               <button class="link-button">Add To Cart</button>
+               <button id= ${currentProducts[i].id} class="remove-item-button" onclick= "deleteItem(this)">Remove</button>
+           </div>`;
+
+       cardContainersDiv.append(newDiv);
+    }
+ }
+
+    function deleteItem(product) {
+
+        const item = JSON.parse( localStorage.getItem("ourProducts"))
+        console.log(item);
+        console.log(product.id);
+        for(let i = 0; i < item.length; i++){
+            if( product.id == item[i].id) {
+                item.splice(i, 1);
+            
+                localStorage.setItem("ourProducts", JSON.stringify(item));
+        }
+        location.reload(); 
+        
+    }
+}
 
