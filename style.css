@@ -232,7 +232,7 @@ p{
 
 /*cart*/
 .cart {
-    position: fixed;
+    position: absolute;
     min-height: 10rem;
     top: 80px;
     right: 0;
@@ -241,6 +241,7 @@ p{
     width: 0;
     overflow:hidden;
     z-index:1;
+    
    
   }
   .show-cart {
@@ -250,11 +251,28 @@ p{
     transform: rotateY(-360deg);
     cursor: pointer;
     overflow:hidden;
+    
   }
 .fa-times-circle{
 position:absolute;
 top:0;
 right:0;
+
+}
+
+
+
+.cart h2{
+
+  text-align:center;  
+}
+
+.img-fluid{
+
+ width:75px;
+ height:70px;
+ border-radius: 5%;
+
 
 }
 
@@ -272,14 +290,7 @@ overflow-y: auto;
   }
 .item-text{
    text-transform: capitalize;
-
-
-
-
 }
-
-
-
 
 
   .cart-item input{
@@ -392,7 +403,11 @@ top:100px;
     content:"In Cart"
 
 }
+.imgSource{
 
+    display:none;
+    
+}
 
 
 .product-price-style {
@@ -412,7 +427,7 @@ top:100px;
     transition: 0.5s;
 }
 
-.link-button{
+.link-button,.remove-item-button{
     margin: 10px;
     border: none;
     border-radius: 20px;
@@ -431,6 +446,36 @@ background-color: green;
 content:"In cart";
 
 } */
+/*images from API*/
+.apiImages{
+
+position:relative;
+}
+
+.apiImageDiv{
+    position: absolute;
+    min-height: 10rem;
+    top: 70px;
+    right: 0;
+    transition: all 0.3s ease-in-out;
+    background: rgba(255, 255, 255);
+    width: 0;
+    overflow:auto;
+    /* z-index:1; */
+   
+  }
+  .show-apiImageDiv {
+    position: fixed;
+    width: 30rem;
+    padding: 2rem 1.5rem;
+    transform: rotateY(-360deg);
+    cursor: pointer;
+    overflow:auto;
+    height: 300px;
+  }
+
+
+/*End of images from API*/
 
 .container{
     margin: 70px;

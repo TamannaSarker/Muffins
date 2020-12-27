@@ -11,6 +11,53 @@
 
 </head>
 <script>
+    function addCartFunc(id) {
+        console.log("i am called", id);
+        let items = [];
+        let currentProduct = JSON.parse(localStorage.getItem("ourProducts"));
+        for (var i = 0; i < currentProduct.length; i++) {
+            if (id == currentProduct[i].id) {
+                let item = {
+                    id: currentProduct[i].id,
+                    name: currentProduct[i].itemName,
+                    price: currentProduct[i].price,
+                    imgSrc: currentProduct[i].imgSrc,
+                    quantity: 1
+                };
+                // let fullPath = currentProduct[i].imgSrc;
+                //let partPath = fullPath.split('/').pop();
+                //item.img = `img-cart/${partPath}`;
+                items.push(item);
+                if (JSON.parse(localStorage.getItem("productInCart")) === null) {
+                    localStorage.setItem("productInCart", JSON.stringify(items));
+                    window.location.reload();
+
+                } else {
+                    const localItem = JSON.parse(localStorage.getItem("productInCart"));
+                    localItem.map(data => {
+                        if (item.id == data.id) {
+                            item.quantity = data.quantity + 1;
+                        } else {
+                            items.push(data);
+                        }
+                    });
+
+                    localStorage.setItem("productInCart", JSON.stringify(items));
+                    console.log(items);
+                    window.location.reload();
+                    console.log(items);
+                }
+
+
+
+            }
+
+        }
+
+    }
+
+    /*------Delete function to delete individual item from cart-------------------------------------------*/
+
     function Delete(id) {
         let currentProducts = JSON.parse(localStorage.getItem("productInCart"));
         let cartItemId = id.parentElement.children[0].textContent;
@@ -26,14 +73,16 @@
         }
     }
 
+
+    /*------function to change the quantity of item in cart-------------------------------------------*/
     function upQuantity(id) {
         let currentProducts = JSON.parse(localStorage.getItem("productInCart"));
-        let cartItemId = id.parentElement.children[0].textContent;
+
 
 
 
         for (let i = 0; i < currentProducts.length; i++) {
-            if (cartItemId == currentProducts[i].id) {
+            if (id == currentProducts[i].id) {
 
                 console.log("quanity changed value ", document.getElementById('quantity_input_' + i).value);
                 var quantity_input_change = parseInt(document.getElementById('quantity_input_' + i).value);
@@ -55,10 +104,10 @@
         }
     }
 
-
-
 </script>
+
 <script src="dynamicProduct.js"></script>
+<script src="main.js" defer></script>
 
 <body>
     <!-- Hamburger menu using html and css -->
@@ -72,7 +121,7 @@
         <ul>
             <li><a href="index.html" class="active">Home</a></li>
             <li><a href="products.html">Products</a></li>
-            <li style="display:none;"><a href="addProduct.html">addProduct</a></li>
+            <li><a href="addProduct.html">addProduct</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="contact.html">Contact</a></li>
             <li><a id="cart-info" href="#cart">
@@ -119,7 +168,7 @@
     </section>
 
 
-    <script src="main.js"></script>
+
 </body>
 
 </html>
