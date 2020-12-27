@@ -222,15 +222,17 @@ p{
     transition: all 0.3s ease-in-out;
     background: rgba(255, 255, 255);
     width: 0;
-    overflow:auto;
+    overflow:hidden;
     z-index:1;
+   
   }
   .show-cart {
-    width: 25rem;
+    position: fixed;
+    width: 30rem;
     padding: 2rem 1.5rem;
     transform: rotateY(-360deg);
     cursor: pointer;
-    overflow:auto;
+    overflow:hidden;
   }
 .fa-times-circle{
 position:absolute;
@@ -239,49 +241,62 @@ right:0;
 
 }
 
-
-
   .cart-item {
+    
+    padding:10px;
     transition: all 2s ease-in-out;
     display: grid;
-    grid-template-columns:80px 200px 10px ;
+    grid-template-columns:100px 200px ;
     column-gap:2%;
-    grid-template-rows:auto;
-    margin-bottom:50px;
-    overflow:auto;
+    grid-template-rows:120px; 
+    margin-bottom:20px;
+    overflow: hidden;
+overflow-y: auto;
   }
+.item-text{
+   text-transform: capitalize;
+
+
+
+
+}
+
+
+
+
+
   .cart-item input{
 height:20px;
 
   }
 
 
+  /* end of cart */
+  /* cart item */
+  .cart-item-remove {
+    color:#ef7998;
+    transition: all 1s ease-in-out;
+  }
+  .cart-item-remove:hover {
+    transform: scale(1.1);
+    color: #000;;
+  }
+  #cart-item-price {
+    font-size: 0.8rem;
+  }
 
+  .cart-total-container{
+display:flex;
+justify-content: center;
+align-items: center;
 
-/* -------------------------- ADMIN PAGE ----------------- */
-
-
-
-
-
-
-
-/* -------------------------- ADMIN PAGE END ----------------- */
-
-
-
-/*------------------- DONT WORK ---- Same functionality as cart-------------------*/
-
-/*
-.login {
-    position: absolute;
-    min-height: 10rem;
-    top: 0px;
-    right: 0;
-    transition: all 0.3s ease-in-out;
-    background: rgba(255, 255, 255);
-    width: 0;
-    overflow: hidden;
+  }
+  .cart-buttons-container{
+    display:flex;
+    justify-content: space-between;
+  }
+  .cart-buttons-container a{
+      margin:10px;
   }
   
 .showLogin{
@@ -294,9 +309,16 @@ height:20px;
 /*------------------- DONT WORK ---- Same functionality as cart-------------------*/
 
 /* Card*/
+.dynamicProductSection{
+position:absolute;
+top:90px;
+
+
+}
+
 .card{
     width: 330px;
-    margin: 30px;
+    margin: 100px 30px;
     box-sizing: border-box;
     border-radius: 5px; 
     text-align: center; 
@@ -325,18 +347,32 @@ height:20px;
 }
      
 .card-containers{
-    padding-top: 80px;
+    padding-top: 100px;
     box-sizing: border-box;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-around;
-        
 
 }
+
 .product-price-style {
     font-weight: bold;
 }
+
+.remove-button{
+    margin: 10px;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+}
+
+.remove-button:hover{
+    background-color:navajowhite;
+    color: white;
+    transition: 0.5s;
+}
+
 .link-button{
     margin: 10px;
     border: none;
@@ -350,6 +386,13 @@ height:20px;
     transition: 0.5s;
 cursor: pointer;
 }
+/* .link-button:after{
+
+background-color: green;
+content:"In cart";
+
+} */
+
 .container{
     margin: 70px;
     display: flex;
@@ -374,7 +417,8 @@ cursor: pointer;
     padding: 40px;
     margin-left: 30px;
 }
-/* Sign in*/
+
+    /* Sign in*/
 .sign-in-part{ 
     display: flex;
     justify-content: space-around;
@@ -404,15 +448,12 @@ cursor: pointer;
     }
     
 
-    
-
 
     /*footer*/
 
     .bttn{
         border: none;
         padding: 5px 20px;
-        font-size: 1.5rem;
         border-radius: 5px;
         margin-bottom: 10px;
         
@@ -420,7 +461,7 @@ cursor: pointer;
     footer{
         background-color: black;
         color: white;
-        height: 130px;
+        height: 150px;
         text-align: center;
         padding: 30px;
     }
@@ -430,16 +471,21 @@ cursor: pointer;
 /* contact*/
 .bg{
     background-color: #ff69b4;
-}
-.contact{
+  }
+  .contact{
     padding-top: 90px;
-}
-.contact-container {
-    width: 90%;
+    height: 120vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .contact-container {
+    width: 100%;
     max-width: 500px;
     margin: 0 auto;
     padding: 20px;
-    box-shadow: 0px 0px 20px #00000010;
+    box-shadow: 0px 0px 5px gray;
     background-color: white;
     border-radius: 8px;
     margin-bottom: 20px;
@@ -478,6 +524,7 @@ cursor: pointer;
   button[type="submit"]:hover {
     background-color: rgb(214, 226, 236);
   }
-
+ 
+  
 
 
