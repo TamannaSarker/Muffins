@@ -6,7 +6,7 @@ window.onload = function () {
 
 
 
-
+    //function to call images from API
 
     async function apiImageFunc(e) {
         e.preventDefault();
@@ -18,9 +18,6 @@ window.onload = function () {
         closeBtn.addEventListener("click", function () {
             apiImgDiv.classList.remove("show-apiImageDiv");
         });
-
-
-
 
         const url = "https://api.unsplash.com/search/photos?query=cupcakes&per_page=20&client_id=3JCiE4B5MmNqBKSapU83_51udslQFpkOw_ObgTDTXO8";
         const imageDiv = document.querySelector('.image');
@@ -40,6 +37,8 @@ window.onload = function () {
 
                 }
             });
+
+        //To select the image chosen and view the source in a div
         let fullPath = document.getElementsByClassName("apiImg");
 
         console.log("api images", fullPath);

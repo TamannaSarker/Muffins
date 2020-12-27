@@ -24,9 +24,7 @@
                     imgSrc: currentProduct[i].imgSrc,
                     quantity: 1
                 };
-                // let fullPath = currentProduct[i].imgSrc;
-                //let partPath = fullPath.split('/').pop();
-                //item.img = `img-cart/${partPath}`;
+
                 items.push(item);
                 if (JSON.parse(localStorage.getItem("productInCart")) === null) {
                     localStorage.setItem("productInCart", JSON.stringify(items));
