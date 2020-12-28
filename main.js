@@ -206,14 +206,7 @@ window.onload = function cardAddFunction() {
       (function checkout() {
          let checkOutBtn = document.querySelector("#checkout");
          checkOutBtn.addEventListener("click", () => {
-            var dataInLocalStorage = JSON.parse(localStorage.getItem("productInCart"));
-            const cartTotal = document.querySelector("#cart-total");
-            console.log(cartTotal);
-
-            if (cartTotal.textContent == 0 || dataInLocalStorage == null) {
-               alert("please add items to cart");
-            }
-            else { alert("Your Order has been placed successfully"); }
+           window.location.replace("checkout.html");
 
 
          })
