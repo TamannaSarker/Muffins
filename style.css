@@ -6,12 +6,6 @@
     list-style: none;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-body {
-    max-width: 1000px;
-    margin: 50px auto;
-	background: #edf0f4;
-	box-shadow: 0px 0px 20px 0px #d0ceca;
-}
 p {
     font-weight: 300;
     color: #333;
@@ -27,16 +21,14 @@ nav{
     background-color: #ffffff;
     height: 80px;
     width: 100%;
-	
 }
 label.logo{
-    color: #ff69b4;
-    font-size: 20px;
+    color: #fcd7a7;
+    font-size: 25px;
     line-height: 80px; 
     font-weight: bold;
-	text-transform: uppercase;
+
 }
- 
 img.logo-style {
     height: 50px;
     width: auto;
@@ -77,17 +69,8 @@ a:active, a:hover{
     display: none;
 }
 @media (max-width: 952px){
- 
-	
-	body {
-    max-width: 100%;
-    margin: 0;
-    background: #edf0f4;
-    box-shadow: 0px 0px 20px 0px #d0ceca;
-}
     label.logo{
         font-size: 25px; 
-		position: absolute;
 
     }
     .banner .content h2 {
@@ -102,7 +85,7 @@ a:active, a:hover{
         display: block;
     }
     ul{
-        position: relative;
+        position: relative;;
         width: 100%;
         height: 100vh;
         background-color: wheat;
@@ -146,10 +129,8 @@ p{
     text-align: center;
 }
 .banner .content h2{
-	font-size: 1.5em;
-    background: white;
-    padding: 10px;
-    color: #ff69b4;
+    font-size: 6em;
+    color:#ff69b4;
     text-transform: uppercase;
     text-shadow: 5px 5px 15px #fdfdfd;
 }
@@ -353,22 +334,34 @@ align-items: center;
 }
 
 /* Card*/
+.dynamicProductSection{
+position:absolute;
+top:100px;
+
+}
+.dynamicProductSection h2{
+   text-align: center;
+}
 
 .wrapper{
 
-    margin-top:50px ; 
+    margin-top:50px ;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    display: flex;
     flex-direction: column;
-	padding: 0 30px;
 }
 
 .card{
-    width: 300px;
-    margin: 10px 10px;
+    width: 330px;
+    margin: 100px 30px;
     box-sizing: border-box;
     border-radius: 5px; 
     text-align: center; 
     background: #f9f9f9;
-    padding-bottom:15px;   
+    padding-bottom:15px;  
+    margin-top: 10rem;  
 }
 .img-style{
     width: 100%;
@@ -378,8 +371,7 @@ align-items: center;
 .card-body .card-title{
     padding: 20px 5px 15px;
     text-align: center;
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 22px;
     text-transform: uppercase;
     color: #444; 
     
@@ -400,7 +392,6 @@ align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-	padding-bottom: 10px;
 
 }
 
@@ -441,13 +432,7 @@ align-items: center;
     color: white;
     transition: 0.5s;
 }
-.remove-item-button {
-    padding: 8px 12px;
-    border: none;
-    border-radius: 30px;
-    background: #e62535;
-    color: white;
-}
+
 .link-button{
     margin: 10px;
     border: none;
@@ -502,9 +487,6 @@ position:relative;
     margin: 70px;
     display: flex;
 }
-section.about {
-    background: white;
-}
 /**/
 .row{
     display: flex;
@@ -545,16 +527,14 @@ section.about {
         border: none;
         padding: 5px;
         border-radius: 3px;
-        border-radius: 3px;
+        border-radius: 30px;
         margin-bottom: 7px;
     }
-    .sign-in button{  
-		background-color: #9a3769;
-		color: white;
-		font-size: 12px;
-		padding: 7px 10px 6px;
-		border-radius: 3px;
-		border: none; 
+    .sign-in button{ 
+        background-color: white;
+        padding: 5px;
+        border-radius: 30px;
+        border: none;
     }
     
 
@@ -570,16 +550,18 @@ section.about {
         
     }
     footer{
-        background-color: #581637;
-        color: white; 
+        background-color: black;
+        color: white;
+        height: 130px;
         text-align: center;
-        padding: 20px;
+        padding: 30px;
     }
-    .subscribe h2 {
-    	padding-bottom: 5px;
-	}
+    
 /*cart page*/
-/* Contact site*/ 
+/* Contact site*/
+.bg{
+    background-color: #ff69b4;
+  }
   .contact{
     padding-top: 90px;
   }
@@ -593,15 +575,6 @@ section.about {
     border-radius: 8px;
     margin-bottom: 20px;
   }
-	input {
-		padding: 10px;
-	}
-	button#addBtn {
-		padding: 10px;
-		background: #fbd7a7;
-		border: 1px solid #fbd7a7;
-		border-radius: 30px;
-	}
   .form-group {
     width: 100%;
     margin-top: 20px;
@@ -619,7 +592,8 @@ section.about {
   textarea {
     resize: vertical;
   }
-  button[type="submit"] { 
+  button[type="submit"] {
+    width: 100%;
     border: none;
     outline: none;
     padding: 20px;

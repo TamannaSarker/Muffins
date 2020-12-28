@@ -150,11 +150,11 @@ else {
        <div class="card-body">
            <div class="card-title">
                <div class="product-name-style">${currentProducts[i].itemName}</div>
-               
+               <span>${currentProducts[i].id}</span>
            </div>
            <div class="card-desc">
                <div class="product-price-style">$ <span> ${currentProducts[i].price}</span> </div>
-               <button class="link-button">Edit</button>
+               <button class="link-button">Add To Cart</button>
                <button id= ${currentProducts[i].id} class="remove-item-button" onclick= "deleteItem(this)">Remove</button>
            </div>`;
 
@@ -164,7 +164,7 @@ else {
 
     function deleteItem(product) {
 
-        const item = JSON.parse(localStorage.getItem("ourProducts"))
+        const item = JSON.parse( localStorage.getItem("ourProducts"))
         console.log(item);
         console.log(product.id);
         for(let i = 0; i < item.length; i++){
