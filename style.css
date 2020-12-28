@@ -7,8 +7,6 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 body {
-    max-width: 1000px;
-    margin: 50px auto;
 	background: #edf0f4;
 	box-shadow: 0px 0px 20px 0px #d0ceca;
 }
@@ -134,7 +132,7 @@ p{
 }
 .banner{
     width: 100%;
-    min-height: 76vh;
+    min-height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
