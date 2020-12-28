@@ -1,16 +1,14 @@
-
-
 function validate() {
    var username = document.getElementById("username").value;
    var password = document.getElementById("password").value;
 
    if (username == "admin" && password == "123") {
       alert("Login succesful as admin");
-      window.open('addProduct.html');
+      window.location.replace('addProduct.html');
    }
    else if (username == "user" && password == "1212") {
       alert("Login succesful as user");
-      window.open('products.html');
+      window.location.replace('products.html');
    }
 
 
@@ -44,7 +42,7 @@ window.onload = function cardAddFunction() {
    },
    {
       id: 3,
-      itemName: "Cinnemon cupcakes",
+      itemName: "Cardemom cupcakes",
       price: 3,
       imgSrc: "images/kardemummamuffin.jpg"
 
@@ -70,14 +68,13 @@ window.onload = function cardAddFunction() {
          newDiv.classList.add("card");
          newDiv.innerHTML += `
          <img class="img-style" src="${currentProducts[i].imgSrc}" alt="Julmuffin">
-
          <div class="card-body">
              <div class="card-title">
                  <div class="product-name-style">${currentProducts[i].itemName}</div>
              </div>
              <div class="card-desc">
                  <div class="product-price-style">$ <span> ${currentProducts[i].price}</span> </div>
-                 <button class="link-button">Add To Cart</button>
+                 <button class="link-button" onclick= "addCartFunc(${currentProducts[i].id})"  >Add To Cart</button>
              </div>`;
 
          cardContainersDiv.append(newDiv);
@@ -96,62 +93,15 @@ window.onload = function cardAddFunction() {
       const closeBtn = document.querySelector(".fa-times-circle");
       cartInfo.addEventListener("click", function () {
          cart.classList.add("show-cart");
+
       });
 
       closeBtn.addEventListener("click", function () {
          cart.classList.remove("show-cart");
       });
 
-      //adding data to local storage
-      const addToCartBtn = document.getElementsByClassName("link-button");
-      let items = [];
-      for (let i = 0; i < addToCartBtn.length; i++) {
+      /*the function for adding cart item is in product.html, and setting "productIncart" in localstorage*/
 
-         addToCartBtn[i].addEventListener("click", function (e) {
-
-            if (typeof (localStorage) !== 'undefined') {
-               let item = {
-                  id: i + 1,
-                  name: e.target.parentElement.parentElement.children[0].children[0].textContent,
-                  price: e.target.parentElement.children[0].children[0].textContent,
-                  quantity: 1
-               };
-               let fullPath = e.target.parentElement.parentElement.previousElementSibling.src;
-               let pos = fullPath.indexOf("images") + 6;
-               let partPath = fullPath.slice(pos);
-               item.img = `img-cart${partPath}`;
-               items.push(item);
-               console.log(items);
-               if (JSON.parse(localStorage.getItem("productInCart")) === null) {
-                  localStorage.setItem("productInCart", JSON.stringify(items));
-                  window.location.reload();
-
-               } else {
-                  const localItem = JSON.parse(localStorage.getItem("productInCart"));
-                  localItem.map(data => {
-                     if (item.id == data.id) {
-                        item.quantity = data.quantity + 1;
-                     } else {
-                        items.push(data);
-                     }
-                  });
-
-                  localStorage.setItem("productInCart", JSON.stringify(items));
-                  console.log(items);
-                  window.location.reload();
-                  console.log(items);
-               }
-
-
-            } else {
-               alert("localstorage is not set");
-
-            }
-
-         });
-
-
-      };
 
       let currentDataIn = JSON.parse(localStorage.getItem("productInCart"));
       console.log(currentDataIn);
@@ -177,23 +127,18 @@ window.onload = function cardAddFunction() {
          dataInLocalStorage.map(data => {
 
             cartItem.innerHTML += `
-         <img src="${data.img}" class="img-fluid rounded-circle" id="item-img" alt="muffin">
+         <img src="${data.imgSrc}" class="img-fluid"  alt="muffin" id="item-img">
              <div class="item-text">
              <span style="display:none;" id="dataId"> ${data.id}</span>
-
                  <p id="cart-item-title" class="font-weight-bold mb-0">${data.name}</p>
                  <span id="cart-item-price" class="cart-item-price" class="mb-0">
                  <span>$</span>
                  ${data.price}</span>
                  <p style="display:none;"id="cart-item-title" class="font-weight-bold mb-0">quantity:${data.quantity}</p>
                  <label for="number">quantity</label>
-                 <input id="quantity_input_`+ i + `" onchange="upQuantity(this)" class="cart_input_quantity" type="number" name="" value=${data.quantity} min="0" max="20">
-
+                 <input id="quantity_input_`+ i + `" onchange="upQuantity(${data.id})" class="cart_input_quantity" type="number" name="" value=${data.quantity} min="0" max="20">
                  <a href="#" onclick="Delete(this)"><i class="fas fa-trash"></i></a>
-
              </div>
-
-
           `;
 
             i++;
@@ -280,6 +225,3 @@ window.onload = function cardAddFunction() {
    };
 
 }
-
-
-
