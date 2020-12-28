@@ -150,27 +150,28 @@ else {
        <div class="card-body">
            <div class="card-title">
                <div class="product-name-style">${currentProducts[i].itemName}</div>
+               
            </div>
            <div class="card-desc">
                <div class="product-price-style">$ <span> ${currentProducts[i].price}</span> </div>
-               <button class="link-button">Add To Cart</button>
+               <button class="link-button">Edit</button>
                <button id= ${currentProducts[i].id} class="remove-item-button" onclick= "deleteItem(this)">Remove</button>
            </div>`;
 
         cardContainersDiv.append(newDiv);
     }
-}
+ }
 
-function deleteItem(product) {
+    function deleteItem(product) {
 
-    const item = JSON.parse(localStorage.getItem("ourProducts"))
-    console.log(item);
-    console.log(product.id);
-    for (let i = 0; i < item.length; i++) {
-        if (product.id == item[i].id) {
-            item.splice(i, 1);
-
-            localStorage.setItem("ourProducts", JSON.stringify(item));
+        const item = JSON.parse(localStorage.getItem("ourProducts"))
+        console.log(item);
+        console.log(product.id);
+        for(let i = 0; i < item.length; i++){
+            if( product.id == item[i].id) {
+                item.splice(i, 1);
+            
+                localStorage.setItem("ourProducts", JSON.stringify(item));
         }
         location.reload();
 
