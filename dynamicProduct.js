@@ -96,4 +96,3 @@ if (JSON.parse(localStorage.getItem("ourProducts")) == null) {
         
     }
 }
-
