@@ -409,12 +409,12 @@ align-items: center;
 
 .product-price-style {
     font-size: 14px;
-    background: #49af43;
     width: fit-content;
     padding: 5px 10px;
-    display: inline-flex;
     border-radius: 30px;
-    color: white;
+    color: black;
+    margin-left: 8rem;
+    font-weight: bold;
 }
 
 .remove-button{
