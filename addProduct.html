@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Add products </title>
+    <title>Contact us </title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet" />
     <script src="dynamicProduct.js" defer></script>
@@ -26,7 +26,7 @@
             <li><a href="addProduct.html">addProduct</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="contact.html">Contact</a></li>
-            <li style="display:none;"><a id="cart-info" href="#cart">
+            <li><a id="cart-info" href="#cart">
                     <span class="item-total">0</span>
                     <i class="fas fa-cart-plus"></i>Cart
                     <span class="cart-total"></span>
@@ -45,9 +45,9 @@
 
                 <label for="itemPrice">Item Price:</label>
                 <input type="text" placeholder="Item Price" id="itemPrice">
-                <button id="chooseImg"> Choose Image </button> <br>
+                <!-- <input type="file" name="fileupload" value="fileupload" id="fileupload" accept="image/*"><br> -->
 
-                <!--<input type="file" id="newImgSrc"><br>-->
+                <input type="file" id="newImgSrc"><br>
 
                 <button id="addBtn">Add Items</button>
 
@@ -55,28 +55,14 @@
         </div>
     </section>
 
-    <div id="apiImageDiv" class="apiImageDiv">
-        <i class="far fa-times-circle"></i>
-        <p>Hello i am here</p>
-
-
-    </div>
-
-
-
-
-
-
-
-
-
     <section>
         <div class="card-containers">
+
 
         </div>
 
     </section>
-
+    
 
     <script src="main.js"></script>
 </body>
