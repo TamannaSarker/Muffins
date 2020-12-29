@@ -109,7 +109,7 @@ a:active, a:hover{
   text-align: center; }
 
 .banner .content h2 {
-  font-size: 2.5em;
+  font-size: 1.5em;
   background: white;
   padding: 10px;
   color: #ff69b4;
@@ -524,3 +524,39 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
   background-color: #d6e2ec; }
+
+.checkoutContainer {
+  border: solid 2px white;
+  max-width: 400px;
+  margin-top: 1rem; }
+
+.checkout {
+  padding-top: 25px;
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: column wrap;
+  padding-bottom: 10px;
+  justify-content: center;
+  border: 4px solid #fbd7a7;
+  max-width: 300px;
+  margin-left: 3rem;
+  margin-top: 3rem; }
+
+.checkout-card {
+  padding-bottom: 20px;
+  margin-left: 4rem; }
+
+.download-pdf {
+  padding: 10px;
+  background: #fbd7a7;
+  border: 1px solid #fbd7a7;
+  border-radius: 30px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-left: 8rem; }
+
+.checkout-title {
+  font-weight: bold; }
+
+.cart-total-container h5 {
+  font-size: large; }

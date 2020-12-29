@@ -41,19 +41,10 @@ window.onload = function () {
         //To select the image chosen and view the source in a div
         let fullPath = document.getElementsByClassName("apiImg");
 
-        console.log("api images", fullPath);
-
-        let imgClicked;
-
-        console.log("fullpath len", fullPath.length);
-
         for (let i = 0; i < fullPath.length; i++) {
 
             fullPath[i].addEventListener("click", () => {
-                imgClicked = fullPath[i].currentSrc;
-
-                console.log("im in loop", imgClicked);
-
+                let imgClicked = fullPath[i].currentSrc;
                 alert("image chosen");
                 let newdivElement = document.createElement("div");
                 newdivElement.setAttribute("class", "imgSource");
@@ -92,7 +83,7 @@ window.onload = function () {
         let dataFromLocalStorage = JSON.parse(localStorage.getItem("ourProducts"));
         (function addNewProductToLocalStorage() {
 
-            console.log("im here");
+
 
 
             //pushing the new product object to the existing data in local storage
@@ -106,12 +97,7 @@ window.onload = function () {
             item.id = id;
             item.itemName = itemName;
             item.price = price;
-
-
-
             item.imgSrc = imgSourceElement;
-
-            console.log("i am the Object", item);
             dataFromLocalStorage.push(item);
 
 
@@ -132,13 +118,12 @@ window.onload = function () {
 
 if (JSON.parse(localStorage.getItem("ourProducts")) == null) {
     localStorage.setItem("ourProducts", JSON.stringify(products));
-    //window.location.reload();
+
 }
 else {
     //if localstorage has data creating those products dynamically in product.html
     let currentProducts = JSON.parse(localStorage.getItem("ourProducts"));
 
-    console.log(currentProducts);
 
     for (let i = 0; i < currentProducts.length; i++) {
 
@@ -162,12 +147,11 @@ else {
         cardContainersDiv.appendChild(newDiv);
     }
 }
-
+//Delete item function
 function deleteItem(product) {
 
     const item = JSON.parse(localStorage.getItem("ourProducts"))
-    console.log(item);
-    console.log(product.id);
+
     for (let i = 0; i < item.length; i++) {
         if (product.id == item[i].id) {
             item.splice(i, 1);
@@ -179,9 +163,10 @@ function deleteItem(product) {
     }
 }
 
+//update item function
 function updateItem(product) {
     const item = JSON.parse(localStorage.getItem("ourProducts"))
-    console.log("I am the product", product);
+
     for (let i = 0; i < item.length; i++) {
         if (product.id == item[i].id) {
             document.getElementById("addBtn").style.display = 'none';
@@ -197,6 +182,8 @@ function updateItem(product) {
 let updateBtn = document.getElementById("updateBtn");
 updateBtn.addEventListener("click", saveUpdate);
 
+
+//function that saves the new changes to local storage
 function saveUpdate() {
     const item = JSON.parse(localStorage.getItem("ourProducts"))
     let idChange = document.getElementById("itemid").value;

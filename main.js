@@ -1,3 +1,5 @@
+//login function
+
 function validate() {
    var username = document.getElementById("username").value;
    var password = document.getElementById("password").value;
@@ -60,8 +62,6 @@ window.onload = function cardAddFunction() {
       //if localstorage has data creating those products dynamically in product.html
       let currentProducts = JSON.parse(localStorage.getItem("ourProducts"));
 
-      console.log(currentProducts);
-
       for (let i = 0; i < currentProducts.length; i++) {
          let cardContainersDiv = document.querySelector(".card-containers");
          let newDiv = document.createElement("div");
@@ -104,7 +104,6 @@ window.onload = function cardAddFunction() {
 
 
       let currentDataIn = JSON.parse(localStorage.getItem("productInCart"));
-      console.log(currentDataIn);
 
       const headerQuantityIcon = document.querySelector(".item-total");
       let quantity = 0;
@@ -169,13 +168,13 @@ window.onload = function cardAddFunction() {
       showTotal.map(data => {
 
          total.push(parseFloat(((data.price) * data.quantity)));
-         console.log(total);
+
          const totalMoney = total.reduce(function (total, item) {
             total += item;
             return total;
 
          }, 0);
-         console.log(totalMoney);
+
 
          const FinalTotal = totalMoney.toFixed(2);
          const cartTotal = document.querySelector("#cart-total");

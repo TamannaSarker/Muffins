@@ -11,9 +11,9 @@
 
 </head>
 <script>
-
+    //function for adding cart items to local storage
     function addCartFunc(id) {
-        console.log("i am called", id);
+
         let items = [];
         let currentProduct = JSON.parse(localStorage.getItem("ourProducts"));
         for (var i = 0; i < currentProduct.length; i++) {
@@ -42,9 +42,9 @@
                     });
 
                     localStorage.setItem("productInCart", JSON.stringify(items));
-                    console.log(items);
+
                     window.location.reload();
-                    console.log(items);
+
                 }
 
 
@@ -60,7 +60,7 @@
     function Delete(id) {
         let currentProducts = JSON.parse(localStorage.getItem("productInCart"));
         let cartItemId = id.parentElement.children[0].textContent;
-        console.log(id.parentElement.children[0].textContent);
+
 
         for (var i = 0; i < currentProducts.length; i++) {
             if (cartItemId == currentProducts[i].id) {
@@ -80,7 +80,6 @@
         for (let i = 0; i < currentProducts.length; i++) {
             if (id == currentProducts[i].id) {
 
-                console.log("quanity changed value ", document.getElementById('quantity_input_' + i).value);
                 var quantity_input_change = parseInt(document.getElementById('quantity_input_' + i).value);
 
                 if (quantity_input_change <= 0) {

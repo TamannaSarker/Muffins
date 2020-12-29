@@ -9,34 +9,6 @@
     <link rel="stylesheet" href="style.css" type="text/css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet" />
     <script src="main.js" defer></script>
-    <script>
-        function Delete(e) {
-            let items = [];
-            console.log(items);
-            var CurrentDataInLocalStorage = JSON.parse(localStorage.getItem("productInCart"));
-            CurrentDataInLocalStorage.map(data => {
-
-                let id = e.parentElement.children[0].textContent;
-
-                //console.log(id);
-
-                if (data.id != id.split(':').pop()) {
-
-                    console.log(data.id);
-
-                    items.push(data);
-
-                }
-
-            });
-
-            localStorage.setItem("productInCart", JSON.stringify(items));
-            window.location.reload();
-        }
-
-    </script>
-
-
 
 </head>
 
@@ -71,7 +43,7 @@
 
     <header class="banner" id="banner">
         <div class="content">
-            <h2>Piece of <span class="cake-style-color">cake</span></h2>
+            <h2>There is one special <span class="cake-style-color">cake</span> for everyone</h2>
         </div>
     </header>
 
