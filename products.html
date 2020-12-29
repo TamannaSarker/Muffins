@@ -11,6 +11,7 @@
 
 </head>
 <script>
+
     function addCartFunc(id) {
         console.log("i am called", id);
         let items = [];
@@ -65,7 +66,7 @@
             if (cartItemId == currentProducts[i].id) {
                 currentProducts.splice(i, 1);
                 localStorage.setItem("productInCart", JSON.stringify(currentProducts));
-                window.location.reload();
+                location.reload();
 
             }
         }
@@ -75,9 +76,6 @@
     /*------function to change the quantity of item in cart-------------------------------------------*/
     function upQuantity(id) {
         let currentProducts = JSON.parse(localStorage.getItem("productInCart"));
-
-
-
 
         for (let i = 0; i < currentProducts.length; i++) {
             if (id == currentProducts[i].id) {

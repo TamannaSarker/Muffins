@@ -20,7 +20,7 @@ window.onload = function () {
         });
 
         const url = "https://api.unsplash.com/search/photos?query=cupcakes&per_page=20&client_id=3JCiE4B5MmNqBKSapU83_51udslQFpkOw_ObgTDTXO8";
-        const imageDiv = document.querySelector('.image');
+
         await fetch(url)
             .then(response => {
                 return response.json();
@@ -141,7 +141,7 @@ else {
     console.log(currentProducts);
 
     for (let i = 0; i < currentProducts.length; i++) {
-        let cardContainersDiv = document.querySelector(".card-containers");
+
         let newDiv = document.createElement("div");
         newDiv.classList.add("card");
         newDiv.innerHTML += `
@@ -153,27 +153,62 @@ else {
            </div>
            <div class="card-desc">
                <div class="product-price-style">$ <span> ${currentProducts[i].price}</span> </div>
-               <button class="link-button">Edit</button>
+               <button id= ${currentProducts[i].id} class="link-button" onclick="updateItem(this)">Edit</button>
                <button id= ${currentProducts[i].id} class="remove-item-button" onclick= "deleteItem(this)">Remove</button>
-           </div>`;
-
-        cardContainersDiv.append(newDiv);
+           </div>
+           </div>
+           `;
+        let cardContainersDiv = document.querySelector(".card-containers");
+        cardContainersDiv.appendChild(newDiv);
     }
- }
+}
 
-    function deleteItem(product) {
+function deleteItem(product) {
 
-        const item = JSON.parse( localStorage.getItem("ourProducts"))
-        console.log(item);
-        console.log(product.id);
-        for(let i = 0; i < item.length; i++){
-            if( product.id == item[i].id) {
-                item.splice(i, 1);
-            
-                localStorage.setItem("ourProducts", JSON.stringify(item));
+    const item = JSON.parse(localStorage.getItem("ourProducts"))
+    console.log(item);
+    console.log(product.id);
+    for (let i = 0; i < item.length; i++) {
+        if (product.id == item[i].id) {
+            item.splice(i, 1);
+
+            localStorage.setItem("ourProducts", JSON.stringify(item));
         }
         location.reload();
 
+    }
+}
+
+function updateItem(product) {
+    const item = JSON.parse(localStorage.getItem("ourProducts"))
+    console.log("I am the product", product);
+    for (let i = 0; i < item.length; i++) {
+        if (product.id == item[i].id) {
+            document.getElementById("addBtn").style.display = 'none';
+            document.getElementById("updateBtn").style.display = 'block';
+            document.getElementById("itemid").value = item[i].id;
+            document.getElementById("itemName").value = item[i].itemName;
+            document.getElementById("itemPrice").value = item[i].price;
+            document.querySelector(".imgSource").textContent = item[i].imgSrc;
+        }
+    }
+}
+
+let updateBtn = document.getElementById("updateBtn");
+updateBtn.addEventListener("click", saveUpdate);
+
+function saveUpdate() {
+    const item = JSON.parse(localStorage.getItem("ourProducts"))
+    let idChange = document.getElementById("itemid").value;
+    for (let i = 0; i < item.length; i++) {
+        if (idChange == item[i].id) {
+            item[i].itemName = document.getElementById("itemName").value;
+            item[i].price = document.getElementById("itemPrice").value;
+            item[i].imgSrc = document.querySelector(".imgSource").textContent;
+            localStorage.setItem("ourProducts", JSON.stringify(item));
+            location.reload();
+
+        }
     }
 }
 

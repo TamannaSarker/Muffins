@@ -6,8 +6,8 @@
     <title>Add products </title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet" />
-    <script src="dynamicProduct.js" defer></script>
 
+    <script src="dynamicProduct.js" defer></script>
 
 </head>
 
@@ -45,11 +45,16 @@
 
                 <label for="itemPrice">Item Price:</label>
                 <input type="text" placeholder="Item Price" id="itemPrice">
+                <label style="display:none;" for="itemPrice">Item id:</label>
+                <input style="display:none;" type="text" placeholder="Item id" id="itemid">
+
+
                 <button id="chooseImg"> Choose Image </button> <br>
 
-                <!--<input type="file" id="newImgSrc"><br>-->
+
 
                 <button id="addBtn">Add Items</button>
+                <button id="updateBtn">Update Item</button>
 
             </form>
         </div>
@@ -64,13 +69,8 @@
 
 
 
-
-
-
-
-
-
     <section>
+        <h2 style="display:none;">Our Products</h2>
         <div class="card-containers">
 
         </div>
@@ -78,7 +78,7 @@
     </section>
 
 
-    <script src="main.js"></script>
+
 </body>
 
 </html>

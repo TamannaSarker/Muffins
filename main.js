@@ -74,7 +74,7 @@ window.onload = function cardAddFunction() {
              </div>
              <div class="card-desc">
                  <div class="product-price-style">$ <span> ${currentProducts[i].price}</span> </div>
-                 <button class="link-button" onclick= "addCartFunc(${currentProducts[i].id})"  >Add To Cart</button>
+                 <button class="link-button" onclick= "addCartFunc(${currentProducts[i].id})">Add To Cart</button>
              </div>`;
 
          cardContainersDiv.append(newDiv);
@@ -131,13 +131,12 @@ window.onload = function cardAddFunction() {
              <div class="item-text">
              <span style="display:none;" id="dataId"> ${data.id}</span>
                  <p id="cart-item-title" class="font-weight-bold mb-0">${data.name}</p>
-                 <span id="cart-item-price" class="cart-item-price" class="mb-0">
+                 <span id="cart-item-price" class="cart-item-price">
                  <span>$</span>
                  ${data.price}</span>
-                 <p style="display:none;"id="cart-item-title" class="font-weight-bold mb-0">quantity:${data.quantity}</p>
                  <label for="number">quantity</label>
                  <input id="quantity_input_`+ i + `" onchange="upQuantity(${data.id})" class="cart_input_quantity" type="number" name="" value=${data.quantity} min="0" max="20">
-                 <a href="#" onclick="Delete(this)"><i class="fas fa-trash"></i></a>
+                 <a href="#" onclick="Delete(this)"><i class="fa fa-trash" aria-hidden="true"></i></a>
              </div>
           `;
 
@@ -206,7 +205,7 @@ window.onload = function cardAddFunction() {
       (function checkout() {
          let checkOutBtn = document.querySelector("#checkout");
          checkOutBtn.addEventListener("click", () => {
-           window.location.replace("checkout.html");
+            window.location.replace("checkout.html");
 
 
          })
