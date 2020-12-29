@@ -153,7 +153,7 @@ else {
            </div>
            <div class="card-desc">
                <div class="product-price-style">$ <span> ${currentProducts[i].price}</span> </div>
-               <button class="link-button">Add To Cart</button>
+               <button class="link-button, edit-button">Edit</button>
                <button id= ${currentProducts[i].id} class="remove-item-button" onclick= "deleteItem(this)">Remove</button>
            </div>`;
 
@@ -177,3 +177,24 @@ function deleteItem(product) {
     }
 }
 
+// EDIT BUTTON
+const editButtonHandler = (event) => {
+	let productInfo = event.target.parentNode.parentNode.children
+
+	let editObject = {
+		id: Number(event.target.id),
+        itemName: productInfo[1],
+        itemPrice: Number(productInfo[2]),
+        image: productInfo[0].children[0].src
+		
+		
+	}
+
+	localStorage.setItem('edit-product', JSON.stringify(editObject))
+	window.location.href = 'edit.html'
+}
+
+let editButton = document.querySelectorAll('.edit-button')
+for (let i = 0; i < editButton.length; i++) {
+	editButton[i].addEventListener('click', editButtonHandler)
+}
