@@ -4,6 +4,7 @@ function validate() {
    var username = document.getElementById("username").value;
    var password = document.getElementById("password").value;
 
+   if (!username || !password) return;
    if (username == "admin" && password == "123") {
       alert("Login succesful as admin");
       window.location.replace('addProduct.html');

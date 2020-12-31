@@ -83,9 +83,6 @@ window.onload = function () {
         let dataFromLocalStorage = JSON.parse(localStorage.getItem("ourProducts"));
         (function addNewProductToLocalStorage() {
 
-
-
-
             //pushing the new product object to the existing data in local storage
             let item = {
             };

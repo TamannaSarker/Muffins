@@ -7,10 +7,9 @@
     transition: all 0.3s ease-in-out;
     background: white;
     width: 0;
-    overflow:hidden;
+    overflow-y:auto;
     z-index:1;
     
-   
   }
   .show-cart {
     position: fixed;
@@ -18,7 +17,7 @@
     padding: 2rem 1.5rem;
     transform: rotateY(-360deg);
     cursor: pointer;
-    overflow:hidden;
+    overflow-y:scroll;
     
   }
 .fa-times-circle{
@@ -52,13 +51,13 @@ right:0;
     column-gap:2%;
     grid-template-rows:120px; 
     margin-bottom:20px;
-    overflow: hidden;
-overflow-y: auto;
+    overflow-y:scroll;
+    height:400px;
+    
   }
 .item-text{
    text-transform: capitalize;
 }
-
 
   .cart-item input{
 height:20px;
