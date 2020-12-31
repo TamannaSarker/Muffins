@@ -228,7 +228,7 @@ a:active, a:hover{
   grid-template-rows: 120px;
   margin-bottom: 20px;
   overflow-y: scroll;
-  height: 400px; }
+  height: 350px; }
 
 .item-text {
   text-transform: capitalize; }
